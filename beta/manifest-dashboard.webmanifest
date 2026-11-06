@@ -1,0 +1,16 @@
+{
+  "name": "Tagup Dashboard",
+  "short_name": "Tagup Dash",
+  "description": "Dashboard di utilizzo dell'app e delle societa Tagup",
+  "lang": "it",
+  "start_url": "dashboard.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0b0d10",
+  "theme_color": "#0b0d10",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
