@@ -1,1 +1,48 @@
-function _0x10f1(_0x141293,_0x346725){_0x141293=_0x141293-0x105;const _0x5566b4=_0x5566();let _0x10f12e=_0x5566b4[_0x141293];if(_0x10f1['HWwXmH']===undefined){var _0x251148=function(_0x47c95b){const _0x283b2d='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0xb3e0f='',_0x17b30f='';for(let _0x447212=0x0,_0x12e47a,_0x578bbf,_0x43a973=0x0;_0x578bbf=_0x47c95b['charAt'](_0x43a973++);~_0x578bbf&&(_0x12e47a=_0x447212%0x4?_0x12e47a*0x40+_0x578bbf:_0x578bbf,_0x447212++%0x4)?_0xb3e0f+=String['fromCharCode'](0xff&_0x12e47a>>(-0x2*_0x447212&0x6)):0x0){_0x578bbf=_0x283b2d['indexOf'](_0x578bbf);}for(let _0x3ef0c8=0x0,_0x2fad06=_0xb3e0f['length'];_0x3ef0c8<_0x2fad06;_0x3ef0c8++){_0x17b30f+='%'+('00'+_0xb3e0f['charCodeAt'](_0x3ef0c8)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x17b30f);};_0x10f1['ibjsCB']=_0x251148,_0x10f1['pVCcpT']={},_0x10f1['HWwXmH']=!![];}const _0xc614=_0x5566b4[0x0],_0x11e3e5=_0x141293+_0xc614,_0x35018d=_0x10f1['pVCcpT'][_0x11e3e5];return!_0x35018d?(_0x10f12e=_0x10f1['ibjsCB'](_0x10f12e),_0x10f1['pVCcpT'][_0x11e3e5]=_0x10f12e):_0x10f12e=_0x35018d,_0x10f12e;}const _0x48d97c=_0x10f1;(function(_0x2f2de8,_0x59e398){const _0x3888df=_0x10f1,_0x28e2bc=_0x2f2de8();while(!![]){try{const _0x35ac82=-parseInt(_0x3888df(0x116))/0x1+parseInt(_0x3888df(0x10f))/0x2+-parseInt(_0x3888df(0x12d))/0x3*(-parseInt(_0x3888df(0x124))/0x4)+-parseInt(_0x3888df(0x123))/0x5*(-parseInt(_0x3888df(0x11b))/0x6)+-parseInt(_0x3888df(0x107))/0x7*(-parseInt(_0x3888df(0x109))/0x8)+parseInt(_0x3888df(0x111))/0x9*(-parseInt(_0x3888df(0x128))/0xa)+-parseInt(_0x3888df(0x136))/0xb*(parseInt(_0x3888df(0x10c))/0xc);if(_0x35ac82===_0x59e398)break;else _0x28e2bc['push'](_0x28e2bc['shift']());}catch(_0x2bf253){_0x28e2bc['push'](_0x28e2bc['shift']());}}}(_0x5566,0xa0dbe));try{_0x48d97c(0x127)!=typeof Notification&&'granted'===Notification[_0x48d97c(0x12a)]&&importScripts(_0x48d97c(0x135));}catch(_0xb3e0f){}function _0x5566(){const _0x23d5c8=['D2fPDfvUDgLS','Cgf0Ag5HBwu','B3bLBG','mty3nJa1og1msLbivW','C2TPCfDHAxrPBMC','zM9UDhmVyxjJAgL2BY1SyxrPBI04mdaTBM9YBwfSlNDVzMyY','zMLSDgvY','ywrKqwXS','DgHLBG','Bwf0y2G','BwfUAwzLC3qUD2vIBwfUAwzLC3q','nvLLuKHbCq','nejPqLbjsG','Bg9NBY1JB21WBgv0BY5ZDMC','r0vu','Dw5KzwzPBMvK','ntu4otmWtfDmDuHl','BM8Ty2fJAgu','CgvYBwLZC2LVBG','y29UzMLNlMPZ','zM9UDhmVyxjJAgL2BY1SyxrPBI03mdaTBM9YBwfSlNDVzMyY','mtm5mtG1mfnoDvrAtW','Chv0','Bg9NBY10ywD1Cc5WBMC','Bw9Kzq','zxjYB3i','z3j5CgHVlxyZmti','ywn0AxzHDgu','DgfNz2LUzY5ODg1S','Ahr0Chm6lY9Jzg4UB25LC2LNBMfSlMnVBs9ZzgTZl3DLyI92mtyVt25Lu2LNBMfSu0rllNn3lMPZ','mtq0murqquDmAa','Aw5KzxGUAhrTBa','CMvXDwvZDa','zM9UDhmVyxjJAgL2BY1SyxrPBI00mdaTBM9YBwfSlNDVzMyY','y2XPzw50CW','y2f0y2G','mta0m2j2DvDwua','BwfW','ntC0ndHuvgToqxe','y2XVBMu','ywrKrxzLBNrmAxn0zw5LCG','nZuXmZjZu21yBfe','zw5KC1DPDgG','A2v5CW','mtC4ndi5mLLqsxzxtW','y2XHAw0','mtCXzg5ctunt','B3jPz2LU','Bwv0Ag9K','DgvZDa','BMf2AwDHDgu','mty0mZCYzNDvAvf1','Bg9NBY10ywD1Cc1IAwfUy28UC3zN'];_0x5566=function(){return _0x23d5c8;};return _0x5566();}const VERSIONE=_0x48d97c(0x132),FILE=['./',_0x48d97c(0x137),_0x48d97c(0x134),'tagging-under.html',_0x48d97c(0x12b),_0x48d97c(0x122),'logo.svg','logo-perugia.png','logo-tagup.svg',_0x48d97c(0x117),_0x48d97c(0x12f),_0x48d97c(0x125),'icon-192.png','icon-512.png',_0x48d97c(0x139),_0x48d97c(0x12c),_0x48d97c(0x11d),'fonts/archivo-black-latin-400-normal.woff2'];self[_0x48d97c(0x10b)]('install',_0x17b30f=>{const _0x2e17ba=_0x48d97c;_0x17b30f[_0x2e17ba(0x118)](caches['open'](VERSIONE)[_0x2e17ba(0x120)](_0x447212=>_0x447212[_0x2e17ba(0x11f)](FILE))[_0x2e17ba(0x120)](()=>self[_0x2e17ba(0x11c)]()));}),self[_0x48d97c(0x10b)](_0x48d97c(0x133),_0x12e47a=>{const _0x5d6f15=_0x48d97c;_0x12e47a[_0x5d6f15(0x118)](caches[_0x5d6f15(0x10e)]()['then'](_0x578bbf=>Promise['all'](_0x578bbf[_0x5d6f15(0x11e)](_0x43a973=>_0x43a973!==VERSIONE)[_0x5d6f15(0x108)](_0x3ef0c8=>caches['delete'](_0x3ef0c8))))['then'](()=>self[_0x5d6f15(0x105)][_0x5d6f15(0x110)]()));}),self[_0x48d97c(0x10b)]('fetch',_0x2fad06=>{const _0x125320=_0x48d97c,_0x59f501=_0x2fad06[_0x125320(0x138)];_0x125320(0x126)===_0x59f501[_0x125320(0x113)]&&new URL(_0x59f501['url'])[_0x125320(0x112)]===location['origin']&&(_0x125320(0x115)===_0x59f501[_0x125320(0x130)]||/\.(html|js)$/[_0x125320(0x114)](new URL(_0x59f501['url'])[_0x125320(0x119)])||new URL(_0x59f501['url'])[_0x125320(0x119)][_0x125320(0x10d)]('/')?_0x2fad06['respondWith'](caches[_0x125320(0x11a)](VERSIONE)[_0x125320(0x120)](_0x1e9d48=>new Promise(_0x1579ca=>{const _0x4335d4=_0x125320;let _0x1603bd=!0x1;const _0xce283e=()=>_0x1e9d48[_0x4335d4(0x121)](_0x59f501)[_0x4335d4(0x120)](_0x46a6b0=>_0x46a6b0||_0x1e9d48[_0x4335d4(0x121)](_0x4335d4(0x137))),_0x13c988=setTimeout(()=>{_0x1603bd||_0xce283e()['then'](_0x4581b8=>{_0x4581b8&&!_0x1603bd&&(_0x1603bd=!0x0,_0x1579ca(_0x4581b8));});},0x9c4);fetch(_0x59f501,{'cache':_0x4335d4(0x129)})[_0x4335d4(0x120)](_0x42ed8e=>{const _0x368177=_0x4335d4;_0x42ed8e&&_0x42ed8e['ok']&&_0x1e9d48[_0x368177(0x12e)](_0x59f501,_0x42ed8e['clone']()),_0x1603bd||(_0x1603bd=!0x0,clearTimeout(_0x13c988),_0x1579ca(_0x42ed8e));})[_0x4335d4(0x106)](()=>{const _0x37dc7d=_0x4335d4;clearTimeout(_0x13c988),_0x1603bd||_0xce283e()[_0x37dc7d(0x120)](_0x529af2=>{const _0x200300=_0x37dc7d;_0x1603bd=!0x0,_0x1579ca(_0x529af2||Response[_0x200300(0x131)]());});});}))):_0x2fad06['respondWith'](caches[_0x125320(0x11a)](VERSIONE)['then'](_0x2f55df=>_0x2f55df[_0x125320(0x121)](_0x59f501)['then'](_0x57ec99=>{const _0x2045da=_0x125320,_0x3878d7=fetch(_0x59f501,{'cache':_0x2045da(0x129)})[_0x2045da(0x120)](_0x54a1bc=>(_0x54a1bc&&_0x54a1bc['ok']&&_0x2f55df[_0x2045da(0x12e)](_0x59f501,_0x54a1bc[_0x2045da(0x10a)]()),_0x54a1bc));return _0x57ec99?(_0x2fad06[_0x2045da(0x118)](_0x3878d7[_0x2045da(0x106)](()=>{})),_0x57ec99):_0x3878d7['catch'](()=>caches['match'](_0x2045da(0x137)));}))));});
+// Service worker: salva i file dell'app per aprirla anche con poca copertura.
+// I dati (allenamenti, scouting) non passano da qui: li gestisce l'app.
+try { if (typeof Notification !== 'undefined' && Notification.permission === 'granted') importScripts('https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.sw.js'); } catch (e) { /* senza rete: le notifiche tornano alla prossima attivazione */ }
+const VERSIONE = 'grypho-v329';
+const FILE = [
+  './', 'index.html', 'tagging.html', 'tagging-under.html', 'config.js', 'manifest.webmanifest', 'logo.svg', 'logo-perugia.png', 'logo-tagup.svg', 'logo-tagup-bianco.svg', 'logo-tagup.png', 'logo-completo.svg', 'icon-192.png', 'icon-512.png',
+  'fonts/hanken-grotesk-latin-400-normal.woff2', 'fonts/hanken-grotesk-latin-500-normal.woff2', 'fonts/hanken-grotesk-latin-600-normal.woff2',
+  'fonts/hanken-grotesk-latin-700-normal.woff2', 'fonts/hanken-grotesk-latin-800-normal.woff2',
+  'fonts/barlow-condensed-latin-700-normal.woff2', 'fonts/barlow-condensed-latin-800-normal.woff2', 'fonts/barlow-condensed-latin-900-normal.woff2'
+];
+
+self.addEventListener('install', (e) => {
+  e.waitUntil(caches.open(VERSIONE).then((c) => c.addAll(FILE)).then(() => self.skipWaiting()));
+});
+
+self.addEventListener('activate', (e) => {
+  e.waitUntil(
+    caches.keys()
+      .then((chiavi) => Promise.all(chiavi.filter((k) => k !== VERSIONE).map((k) => caches.delete(k))))
+      .then(() => self.clients.claim())
+  );
+});
+
+self.addEventListener('fetch', (e) => {
+  const req = e.request;
+  if (req.method !== 'GET' || new URL(req.url).origin !== location.origin) return;
+  if (req.cache === 'no-store' || req.headers.get('range')) return;   // il controllo versione va sempre in rete
+  // pagine e script: prima la rete (cosi dopo un aggiornamento si vede subito la versione nuova), con la copia salvata se manca la copertura
+  const pagina = req.mode === 'navigate' || /\.(html|js)$/.test(new URL(req.url).pathname) || new URL(req.url).pathname.endsWith('/');
+  if (pagina) {
+    /* apertura veloce: si mostra subito la copia salvata e intanto si scarica quella nuova (la vedi alla prossima apertura, o subito con l'avviso di aggiornamento) */
+    e.respondWith(
+      caches.open(VERSIONE).then((c) => c.match(req, { ignoreSearch: true }).then((salvata) => {
+        const rete = fetch(req, { cache: 'no-cache' }).then((res) => { if (res && res.ok && !req.headers.get('range')) c.put(req, res.clone()); return res; });
+        if (salvata) { e.waitUntil(rete.catch(() => {})); return salvata; }
+        return rete.catch(() => c.match('index.html'));
+      }))
+    );
+    return;
+  }
+  e.respondWith(
+    caches.open(VERSIONE).then((c) => c.match(req).then((salvata) => {
+      const rete = fetch(req, { cache: 'no-cache' }).then((res) => { if (res && res.ok) c.put(req, res.clone()); return res; });
+      if (salvata) { e.waitUntil(rete.catch(() => {})); return salvata; }
+      return rete.catch(() => caches.match('index.html'));
+    }))
+  );
+});
