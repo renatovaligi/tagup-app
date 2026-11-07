@@ -1,6 +1,10 @@
 /* Tagup: frasi dell'app in inglese. Chiave: testo italiano esatto. Le frasi non elencate restano in italiano. */
 window.TG_EN = {
-"Privacy: i consensi valgono per una stagione e vanno confermati ogni 1 luglio. Nel Profilo puoi cancellare il tuo account. Le password nuove devono avere lettere e numeri. Per lo staff: la società accetta una dichiarazione per condividere i video.":"Privacy: consents are valid for one season and must be confirmed again every 1 July. In your Profile you can delete your account. New passwords must contain letters and numbers. For staff: the club accepts a declaration before sharing videos.",
+'Consensi del genitore.':'Parent consent.',
+'Invia il link al genitore':'Send the link to the parent',
+'Ricevi il codice per email':'Get the code by email',
+'Conferma i consensi':'Confirm consents',
+"Privacy: i consensi valgono per una stagione e vanno confermati ogni 1 luglio. Nel Profilo puoi cancellare il tuo account. Le password nuove devono avere lettere e numeri. Per lo staff: la società accetta una dichiarazione per condividere i video. I genitori dei minorenni possono dare i consensi online.":"Privacy: consents are valid for one season and must be confirmed again every 1 July. In your Profile you can delete your account. New passwords must contain letters and numbers. For staff: the club accepts a declaration before sharing videos. Parents of minors can give consent online.",
   'Cancella il mio account': 'Delete my account',
   'Cancellazione in corso...': 'Deleting...',
   'Il tuo account è stato cancellato.': 'Your account has been deleted.',
