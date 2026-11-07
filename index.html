@@ -5434,15 +5434,15 @@ function vistaSettimana() {
 function uSeniorUnderH(d) {
   var oggi = iso(new Date());
   var l = (d.seniorUnder || []).filter(function (x) { return x.data >= oggi; }).sort(function (a, b) { return (a.data + (a.inizio || '')).localeCompare(b.data + (b.inizio || '')) || (a.serie === 'B' ? -1 : 1); });
-  var h = '<div class="sec" style="margin-top:24px">Allenamenti Serie B e C e Under convocati</div>';
-  if (!l.length) return h + '<div class="rp-fonte">Nessun allenamento di B o C in programma.</div>';
+  var club = eClub(), h = '<div class="sec" style="margin-top:24px">' + (club ? 'Allenamenti della prima squadra e Under convocati' : 'Allenamenti Serie B e C e Under convocati') + '</div>';
+  if (!l.length) return h + '<div class="rp-fonte">' + (club ? 'Nessun allenamento in programma.' : 'Nessun allenamento di B o C in programma.') + '</div>';
   var giorni = {}, ord = [];
   l.forEach(function (x) { if (!giorni[x.data]) { giorni[x.data] = []; ord.push(x.data); } giorni[x.data].push(x); });
   return h + ord.map(function (k) {
     var e = etichettaGiorno(k);
     return '<div class="day"><div class="day-h"><div class="day-t">' + esc(e.t) + '</div>' + (e.b ? '<span class="badge soft">' + esc(e.b) + '</span>' : '') + '</div>' + giorni[k].map(function (x) {
       var nm = x.under || [];
-      return '<div class="mat"><div><span class="stag ' + (x.serie === 'B' ? 'b' : 'c') + '">Serie ' + esc(x.serie) + '</span></div><b>' + esc(x.tipo || 'Allenamento') + (x.inizio ? ' · ' + esc(x.inizio) + (x.fine ? ' - ' + esc(x.fine) : '') : '') + '</b>' + (x.luogo ? '<div class="rp-fonte" style="margin:0">' + esc(x.luogo) + '</div>' : '') +
+      return '<div class="mat"><div><span class="stag ' + (x.serie === 'B' ? 'b' : 'c') + '">' + (club ? esc(x.squadra || 'Prima squadra') : 'Serie ' + esc(x.serie)) + '</span></div><b>' + esc(x.tipo || 'Allenamento') + (x.inizio ? ' · ' + esc(x.inizio) + (x.fine ? ' - ' + esc(x.fine) : '') : '') + '</b>' + (x.luogo ? '<div class="rp-fonte" style="margin:0">' + esc(x.luogo) + '</div>' : '') +
         '<div class="rp-fonte" style="margin:8px 0 0">' + (nm.length ? 'Under (' + nm.length + '): ' + nm.map(function (u) { return esc(u.giocatore) + (u.categoria ? ' (' + esc(u.categoria) + ')' : ''); }).join(', ') : 'Nessun Under convocato') + '</div></div>';
     }).join('') + '</div>';
   }).join('');

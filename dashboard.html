@@ -134,7 +134,28 @@ svg text{font-family:"Tagup Text",sans-serif}
 .md{position:fixed;inset:0;z-index:60;background:rgba(3,5,8,.72);backdrop-filter:blur(4px);display:flex;padding:16px;overflow:auto}
 .md[hidden],.toast[hidden]{display:none}
 .mb{width:100%;max-width:480px;margin:auto;background:#0e1621;border:1px solid rgba(255,90,31,.35);border-radius:14px;padding:22px;box-shadow:0 0 50px rgba(255,90,31,.18),0 20px 60px rgba(0,0,0,.6);display:flex;flex-direction:column;gap:14px;max-height:90vh;overflow:auto}
-.mb>*{flex-shrink:0}.mb.mlg{max-width:620px}
+.mb>*{flex-shrink:0}.mb>*{flex-shrink:0}.mb.mlg{max-width:620px}
+.md{align-items:center;justify-content:center}
+.ld{display:flex;align-items:center;gap:14px;padding:10px 0 4px;color:var(--muted);font-size:14px}.ld i{flex:none;width:22px;height:22px;border-radius:50%;border:3px solid var(--line);border-top-color:var(--red);animation:spin .8s linear infinite}
+@media (prefers-reduced-motion:reduce){.ld i{animation:none;border-top-color:var(--line);border-right-color:var(--red)}}
+.mb.mnew{max-width:560px;padding:0;gap:0;overflow:hidden;border-color:rgba(255,90,31,.5)}
+.mnew .mh{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:22px 24px 16px;border-bottom:1px solid var(--line)}
+.mnew .mh h3{font-size:22px}.mnew .mh p{margin-top:4px}
+.mnew .mx{flex:none;width:40px;height:40px;border-radius:10px;border:1px solid var(--line);background:transparent;color:var(--muted);display:grid;place-items:center;cursor:pointer;padding:0}
+.mnew .mx:hover{color:var(--txt);border-color:var(--red)}.mnew .mx:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.mnew .mbody{padding:18px 24px;display:flex;flex-direction:column;gap:18px;overflow:auto;max-height:calc(90vh - 170px)}
+.mnew .mbody>*,.mnew .gz>*,.mnew .fd>*{flex-shrink:0}.mnew .mh,.mnew .mf{flex-shrink:0}
+.mnew small{text-transform:none;letter-spacing:0;font-weight:500;font-family:inherit}
+.mnew .gz{display:flex;flex-direction:column;gap:10px}
+.mnew .gz>h4{margin:0;font:800 11px "Tagup Text",system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--redt)}
+.mnew .fd{display:flex;flex-direction:column}
+.mnew .fd small{margin-top:5px;color:var(--muted);font-size:12px;line-height:1.4}
+.mnew .rp{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.mnew .qk{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px}
+.mnew .qk button{min-height:40px;padding:0 14px;border:1px solid var(--line);border-radius:999px;background:transparent;color:var(--txt);font:700 13px "Tagup Text",system-ui,sans-serif;cursor:pointer}
+.mnew .qk button:hover{border-color:var(--red);color:var(--redt)}.mnew .qk button:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.mnew .mf{display:flex;justify-content:flex-end;gap:10px;padding:16px 24px;border-top:1px solid var(--line);background:rgba(0,0,0,.18)}
+@media (max-width:560px){.mnew .rp{grid-template-columns:1fr}.mnew .mh,.mnew .mbody,.mnew .mf{padding-left:18px;padding-right:18px}.mnew .mf .bt{flex:1}}
 .mb h3{margin:0;font-family:var(--display);font-size:19px;text-transform:uppercase;line-height:1.15}
 .mb p{margin:0;color:var(--muted);font-size:13px;line-height:1.5}
 .mb label{display:block;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
@@ -273,7 +294,7 @@ header>img{object-fit:contain;overflow:visible}
 .sg{display:inline-flex;flex-wrap:wrap;gap:6px}
 .sgb{min-height:38px;padding:0 14px;background:transparent;border:1px solid var(--line);border-radius:999px;color:var(--txt);font:800 12px/1 "Tagup Text",system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
 .sgb:hover{border-color:var(--red)}.sgb.on{background:var(--red);border-color:var(--red);color:#fff}.sgb.agg{margin-left:auto;color:var(--muted)}
-.sgb:focus-visible,.ord:focus-visible,.mb:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.sgb:focus-visible,.ord:focus-visible,.mtb:focus-visible{outline:2px solid #fff;outline-offset:2px}
 .schart{border:1px solid var(--line);border-radius:10px;padding:12px;background:rgba(0,0,0,.18)}
 .sch{display:flex;flex-wrap:wrap;gap:4px 16px;align-items:baseline;margin-bottom:6px}.sch b{font-size:15px}.kv2{font-family:var(--display);font-size:22px;color:var(--txt)}
 .stab{width:100%;border-collapse:collapse;font-size:13px}
@@ -283,9 +304,22 @@ header>img{object-fit:contain;overflow:visible}
 .stab td.su{color:var(--fluo)}.stab td.giu{color:var(--redt)}
 .stab tr.sel{background:rgba(255,90,31,.1)}
 .stab td.tx{max-width:260px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.stab td.tx a{color:var(--redt)}
-.ord,.mb{background:none;border:0;padding:0;margin:0;font:inherit;color:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer;text-align:left}
-.ord.on{color:var(--txt)}.mb{font-weight:800;color:var(--txt)}.mb:hover{color:var(--redt)}
+.ord,.mtb{background:none;border:0;padding:0;margin:0;font:inherit;color:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer;text-align:left}
+.ord.on{color:var(--txt)}.mtb{font-weight:800;color:var(--txt)}.mtb:hover{color:var(--redt)}
 .stab .spk{width:96px;height:26px}
+.slg{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:8px;color:#fff;flex:none;vertical-align:middle;margin-right:8px}.slg svg{width:16px;height:16px}
+.slg.ig{background:linear-gradient(45deg,#f9a03f,#e1306c 55%,#833ab4)}.slg.fb{background:#1877f2}.slg.in{background:#0a66c2}
+.sgb .slg{width:22px;height:22px;border-radius:6px;margin:0 8px 0 -6px}.sgb .slg svg{width:13px;height:13px}.sgb{display:inline-flex;align-items:center}
+.sct{padding:10px;border:1px solid var(--line);border-radius:12px;background:rgba(0,0,0,.14)}
+.scards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.sc4{display:flex;flex-direction:column;gap:4px;text-align:left;border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:rgba(0,0,0,.18);color:var(--txt);cursor:pointer;font:inherit;min-height:44px}
+.sc4:hover{border-color:var(--red)}.sc4.on{border-color:var(--red);box-shadow:inset 0 0 0 1px var(--red)}
+.sc4 .l{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:800}.sc4 .v{font-family:var(--display);font-size:28px;line-height:1.1}.sc4 .d{font-size:12px;color:var(--muted)}.sc4 .d.su{color:var(--fluo)}.sc4 .d.giu{color:var(--redt)}
+.sc4:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.tl.cls{font-size:18px;line-height:1}
+.hidbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 14px;font-size:12px;color:var(--muted)}
+.hidbar button{min-height:32px;padding:0 12px;border:1px dashed var(--line);border-radius:999px;background:transparent;color:var(--txt);font:700 12px "Tagup Text",system-ui,sans-serif;cursor:pointer}
+.hidbar button:hover{border-color:var(--red)}.hidbar button:focus-visible{outline:2px solid #fff;outline-offset:2px}
 @media (prefers-reduced-motion:reduce){.sgb{transition:none}}
 </style>
 <script src="i18n-dict.js"></script><script src="i18n-engine.js"></script>
@@ -410,8 +444,8 @@ function tgJv(o){
   try { SOC_MAN = JSON.parse(localStorage.getItem(CHIAVE_SOC) || '{}') || {}; } catch (e) { SOC_MAN = {}; }
   var SOCIAL = [['ig', 'Instagram', 'https://www.instagram.com/tagup_sportsintelligence'], ['fb', 'Facebook', 'https://www.facebook.com/share/19NBTanJYv/'], ['in', 'LinkedIn', 'https://www.linkedin.com/company/145360986/']];
   var SOCD = null, SOCCAR = false, SOCV = { rete: 'Instagram', per: 30, gr: '', m: '', ord: 'v', dir: -1 };
-  var CHIAVE = 'tagup_dash_layout_v1', LAY = { order: [], w: {} };
-  try { var sv = JSON.parse(localStorage.getItem(CHIAVE) || 'null'); if (sv && sv.order) LAY = { order: sv.order || [], w: sv.w || {} }; } catch (e) { /* layout di default */ }
+  var CHIAVE = 'tagup_dash_layout_v1', LAY = { order: [], w: {}, hid: [] };
+  try { var sv = JSON.parse(localStorage.getItem(CHIAVE) || 'null'); if (sv && sv.order) LAY = { order: sv.order || [], w: sv.w || {}, hid: sv.hid || [] }; } catch (e) { /* layout di default */ }
   function salvaLay() { try { localStorage.setItem(CHIAVE, JSON.stringify(LAY)); } catch (e) { /* ok */ } }
   var SOCIAL_TAGUP = [
   { n: 'Instagram', u: 'https://www.instagram.com/tagup_sportsintelligence', i: '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg>' },
@@ -627,10 +661,16 @@ function tgJv(o){
     });
     var sel = SOCV.m && M[SOCV.m] ? M[SOCV.m] : null;
     if (!sel) { var pri = righe.filter(function (r) { return r.cur; }).sort(function (x, y) { return y.cur - x.cur; })[0]; sel = M[rete === 'Instagram' ? 'IGEV01' : 'FBEV17'] || (pri && pri.m) || (righe[0] && righe[0].m) || null; }
-    function seg(az, vals, cur) { return '<div class="sg" role="group">' + vals.map(function (v) { return '<button type="button" class="sgb' + (String(v[0]) === String(cur) ? ' on' : '') + '" data-sa="' + az + '" data-v="' + esc(v[0]) + '" aria-pressed="' + (String(v[0]) === String(cur)) + '">' + esc(v[1]) + '</button>'; }).join('') + '</div>'; }
+    function seg(az, vals, cur) { return '<div class="sg" role="group">' + vals.map(function (v) { return '<button type="button" class="sgb' + (String(v[0]) === String(cur) ? ' on' : '') + '" data-sa="' + az + '" data-v="' + esc(v[0]) + '" aria-pressed="' + (String(v[0]) === String(cur)) + '">' + (az === 'rete' ? socLogo(v[0]) : '') + esc(v[1]) + '</button>'; }).join('') + '</div>'; }
     var h = '<div class="sct">' + seg('rete', [['Instagram', 'Instagram'], ['Facebook', 'Facebook']], rete) + seg('per', [[7, '7 giorni'], [30, '30 giorni'], [90, '90 giorni'], [9999, 'Tutto']], SOCV.per) +
       (gruppi.length > 1 ? seg('gr', [['', 'Tutte']].concat(gruppi.map(function (g) { return [g, g]; })), SOCV.gr) : '') + '<button type="button" class="sgb agg" data-sa="agg">Ricarica dal foglio</button></div>';
     if (!righe.length) return h + '<div class="vuoto">Per ' + esc(rete) + ' non ci sono ancora dati. Compaiono dopo il primo aggiornamento di Metricool (ogni giorno alle 12:00).</div>';
+    var KEYS = rete === 'Instagram' ? ['IGEV01', 'IGEV06', 'IGEV38', 'IGEV05'] : ['FBEV17', 'FBEV49', 'FBEV34', 'FBEV03'];
+    var cards = KEYS.map(function (k) { return righe.filter(function (x) { return x.m.id === k; })[0]; }).filter(Boolean);
+    if (cards.length) h += '<div class="scards">' + cards.map(function (r) {
+      var dl = r.delta === null ? 'nessun confronto' : (r.delta > 0 ? '+' : '') + r.delta + '% rispetto a prima', cl = r.delta === null ? '' : r.delta > 0 ? ' su' : r.delta < 0 ? ' giu' : '', on = !!(sel && sel.id === r.m.id);
+      return '<button type="button" class="sc4' + (on ? ' on' : '') + '" data-sa="m" data-v="' + esc(r.m.id) + '" aria-pressed="' + on + '"><span class="l">' + esc(r.m.et) + '</span><span class="v">' + fmtV(r.cur, r.m) + '</span><span class="d' + cl + '">' + dl + '</span></button>';
+    }).join('') + '</div>';
     if (sel) {
       var vals = socSerie(sel, da, fine), et = [], tt = [], d = da; while (d <= fine) { et.push(d.slice(8, 10) + '/' + d.slice(5, 7)); tt.push(fmtData(d)); d = dAdd(d, 1); }
       var curSel = socValore(sel, da, fine);
@@ -640,7 +680,7 @@ function tgJv(o){
     h += '<div class="tb"><table class="stab"><thead><tr>' + fr('n', 'Metrica') + fr('g', 'Area') + fr('v', 'Periodo') + fr('p', 'Prima') + fr('d', 'Variazione') + '<th scope="col">Andamento</th></tr></thead><tbody>' +
       vis.map(function (r) {
         var dl = r.delta === null ? '-' : (r.delta > 0 ? '+' : '') + r.delta + '%', cl = r.delta === null ? '' : r.delta > 0 ? ' su' : r.delta < 0 ? ' giu' : '';
-        return '<tr class="' + (sel && sel.id === r.m.id ? 'sel' : '') + '"><th scope="row"><button type="button" class="mb" data-sa="m" data-v="' + esc(r.m.id) + '" aria-pressed="' + !!(sel && sel.id === r.m.id) + '">' + esc(r.m.et) + '</button></th><td>' + esc(r.m.gr) + '</td><td class="nu">' + fmtV(r.cur, r.m) + '</td><td class="nu mu">' + fmtV(r.prv, r.m) + '</td><td class="nu' + cl + '">' + dl + '</td><td>' + spark(socSerie(r.m, da, fine), '#ff5a1f') + '</td></tr>';
+        return '<tr class="' + (sel && sel.id === r.m.id ? 'sel' : '') + '"><th scope="row"><button type="button" class="mtb" data-sa="m" data-v="' + esc(r.m.id) + '" aria-pressed="' + !!(sel && sel.id === r.m.id) + '">' + esc(r.m.et) + '</button></th><td>' + esc(r.m.gr) + '</td><td class="nu">' + fmtV(r.cur, r.m) + '</td><td class="nu mu">' + fmtV(r.prv, r.m) + '</td><td class="nu' + cl + '">' + dl + '</td><td>' + spark(socSerie(r.m, da, fine), '#ff5a1f') + '</td></tr>';
       }).join('') + '</tbody></table></div><p class="nota" style="margin:0">Periodo: ' + fmtData(da) + ' - ' + fmtData(fine) + '. "Prima" è il periodo di pari durata che lo precede. Tocca una metrica per vederla nel grafico. Fonte: Metricool' + (SOCD.aggiornato ? ', aggiornato il ' + fmtData(SOCD.aggiornato) : '') + '.</p>';
     return h;
   }
@@ -659,12 +699,12 @@ function tgJv(o){
     function fAuto(k) { if (!AUTO[k] || !SOCD || !SOCD.ok) return null; var m = socMetriche(AUTO[k][0])[AUTO[k][1]]; if (!m) return null; var v = socValore(m, '2000-01-01', socFine(AUTO[k][0])); return v === null ? null : Number(v); }
     SOCIAL.forEach(function (x) { var fa = fAuto(x[0]); tot += fa !== null ? fa : (Number((SOC_MAN[x[0]] || {}).f) || 0); });
     L.push(kpi('s_tot', fmtN(tot), 'Follower in tutto', 'Instagram e Facebook da Metricool, LinkedIn inserito a mano', ''));
-    L.push({ id: 's_tavola', ws: [12], w: 12, t: 'Statistiche Instagram e Facebook', s: 'Dati di Metricool aggiornati ogni giorno alle 12:00. Scegli rete, periodo e metrica.', h: socTavola() });
-    L.push({ id: 's_post', ws: [12], w: 12, t: 'Post pubblicati', s: 'Dal più recente, con i risultati di ogni post', h: socPost() });
+    L.push({ id: 's_tavola', ws: [12], w: 12, t: socLogo('ig') + socLogo('fb') + 'Statistiche Instagram e Facebook', s: 'Dati di Metricool aggiornati ogni giorno alle 12:00. Scegli rete, periodo e metrica.', h: socTavola() });
+    L.push({ id: 's_post', ws: [12], w: 12, t: socLogo(SOCV.rete) + 'Post pubblicati su ' + SOCV.rete, s: 'Dal più recente, con i risultati di ogni post', h: socPost() });
     SOCIAL.forEach(function (x) {
       var m = SOC_MAN[x[0]] || {};
-      var fa0 = fAuto(x[0]); if (fa0 !== null) { L.push({ id: 's_' + x[0], ws: [3, 4, 6, 12], w: 3, t: x[1], s: 'Profilo Tagup', h: '<div class="kv">' + fmtN(fa0) + '</div><div class="kn">follower, da Metricool' + (SOCD && SOCD.aggiornato ? ', aggiornato il ' + fmtData(SOCD.aggiornato) : '') + '</div><div class="azs"><a class="ab" href="' + esc(x[2]) + '" target="_blank" rel="noopener" style="text-decoration:none;text-align:center">Apri il profilo</a></div>' }); return; }
-      L.push({ id: 's_' + x[0], ws: [3, 4, 6, 12], w: 3, t: x[1], s: 'Profilo Tagup', h: '<div class="kv">' + fmtN(Number(m.f) || 0) + '</div><div class="kn">follower' + (m.d ? ', aggiornato il ' + fmtData(m.d) : '') + '</div>' +
+      var fa0 = fAuto(x[0]); if (fa0 !== null) { L.push({ id: 's_' + x[0], ws: [3, 4, 6, 12], w: 3, t: socLogo(x[0]) + x[1], s: 'Profilo Tagup', h: '<div class="kv">' + fmtN(fa0) + '</div><div class="kn">follower, da Metricool' + (SOCD && SOCD.aggiornato ? ', aggiornato il ' + fmtData(SOCD.aggiornato) : '') + '</div><div class="azs"><a class="ab" href="' + esc(x[2]) + '" target="_blank" rel="noopener" style="text-decoration:none;text-align:center">Apri il profilo</a></div>' }); return; }
+      L.push({ id: 's_' + x[0], ws: [3, 4, 6, 12], w: 3, t: socLogo(x[0]) + x[1], s: 'Profilo Tagup', h: '<div class="kv">' + fmtN(Number(m.f) || 0) + '</div><div class="kn">follower' + (m.d ? ', aggiornato il ' + fmtData(m.d) : '') + '</div>' +
         '<div class="sc-in"><label>Follower<input type="number" min="0" inputmode="numeric" data-sf="' + x[0] + '" value="' + esc(m.f || '') + '"></label><label>Post nel mese<input type="number" min="0" inputmode="numeric" data-sp="' + x[0] + '" value="' + esc(m.p || '') + '"></label></div>' +
         '<div class="azs"><button class="ab" data-az="socsalva" data-s="' + x[0] + '">Salva numeri</button><a class="ab" href="' + esc(x[2]) + '" target="_blank" rel="noopener" style="text-decoration:none;text-align:center">Apri il profilo</a></div>' +
         (m.p ? '<div class="kn">' + fmtN(Number(m.p) || 0) + ' post questo mese</div>' : '') });
@@ -691,7 +731,7 @@ function tgJv(o){
       '<button class="ab bad" data-az="stato" data-s="' + c + '" data-on="' + (s.attiva && !/sosp/i.test(s.stato) ? '1' : '0') + '">' + (/sosp/i.test(s.stato) || !s.attiva && !/scad/i.test(s.stato) && s.stato && !/^(si|attiva)$/i.test(s.stato) ? 'Riattiva' : 'Sospendi') + '</button></div>';
   }
   var md = document.getElementById('md'), toast = document.getElementById('toast'), tt = null;
-  function apri(h, lg) { md.innerHTML = '<div class="mb' + (lg ? ' mlg' : '') + '" role="dialog" aria-modal="true">' + h + '</div>'; md.hidden = false; var f = md.querySelector('input,select'); if (f && !f.type.match(/date/)) try { f.focus(); } catch (e) { /* ok */ } }
+  function apri(h, lg, cls) { md.innerHTML = '<div class="mb' + (lg ? ' mlg' : '') + (cls ? ' ' + cls : '') + '" role="dialog" aria-modal="true">' + h + '</div>'; md.hidden = false; var f = md.querySelector('input,select'); if (f && !f.type.match(/date/)) try { f.focus(); } catch (e) { /* ok */ } }
   function chiudi() { md.hidden = true; md.innerHTML = ''; }
   function avviso(t, err) { toast.textContent = t; toast.className = 'toast' + (err ? ' er' : ''); toast.hidden = false; clearTimeout(tt); tt = setTimeout(function () { toast.hidden = true; }, 3800); }
   function agisci(az, extra) { return api(az, Object.assign({ token: tok }, extra || {})).then(function (r) { if (r && r.sessione === false) { chiudi(); errore = 'Sessione scaduta, accedi di nuovo.'; esci(); return { ok: false, errore: 'Sessione scaduta.' }; } return r || { ok: false, errore: 'Errore.' }; }); }
@@ -710,7 +750,7 @@ function tgJv(o){
     apri('<h3>' + titolo + '</h3><p>' + testo + '</p><div class="mr"><button class="bt" data-az="chiudi">Annulla</button><button class="bt p" data-az="' + az + '" ' + dati + '>' + etichetta + '</button></div>');
   }
   function listaUtenti(nome) {
-    apri('<h3>Utenti</h3><p>Carico...</p>', 1);
+    apri('<h3>Utenti</h3><div class="ld" role="status" aria-live="polite"><i aria-hidden="true"></i>Carico gli utenti di ' + esc(soc(nome).nome || nome) + '...</div>', 1);
     agisci('dash_utenti', { societa: nome }).then(function (r) {
       if (!r.ok) { apri('<h3>Utenti</h3><p>' + esc(r.errore || 'Non disponibile.') + '</p><div class="mr"><button class="bt" data-az="chiudi">Chiudi</button></div>'); return; }
       var rl = r.ruoli || [];
@@ -755,7 +795,7 @@ function tgJv(o){
     if (az === 'chiudi') return chiudi();
     if (az === 'nd-g') { var nd = document.getElementById('nd'), dd = new Date(); dd.setDate(dd.getDate() + (+t.getAttribute('data-g') || 0)); if (nd) nd.value = dIso(new Date(dd.getTime() - dd.getTimezoneOffset() * 60000)); return; }
     if (az === 'copia') return copia(t.getAttribute('data-c'));
-    if (az === 'codice') { t.disabled = true; agisci('dash_soc', { op: 'codice', societa: nome }).then(function (r) { t.disabled = false; if (!r.ok) return avviso(r.errore || 'Codice non disponibile.', 1); mostraCodice(nome, r.codice || ''); }); return; }
+    if (az === 'codice') { apri('<h3>Codice licenza</h3><div class="ld" role="status" aria-live="polite"><i aria-hidden="true"></i>Carico il codice di ' + esc(soc(nome).nome || nome) + '...</div>'); agisci('dash_soc', { op: 'codice', societa: nome }).then(function (r) { if (!r.ok) { apri('<h3>Codice licenza</h3><p>' + esc(r.errore || 'Codice non disponibile.') + '</p><div class="mr"><button class="bt" data-az="chiudi">Chiudi</button></div>'); return; } mostraCodice(nome, r.codice || ''); }); return; }
     if (az === 'nuovo') return conferma('Generare un nuovo codice?', 'Il codice attuale smette di funzionare subito. Chi lo ha già ricevuto dovrà usare quello nuovo.', 'nuovo-ok', 'data-s="' + esc(nome) + '"', 'Genera nuovo');
     if (az === 'nuovo-ok') return agisci('dash_soc', { op: 'nuovo_codice', societa: nome }).then(function (r) { if (!r.ok) return avviso(r.errore || 'Non riuscito.', 1); avviso('Nuovo codice creato'); mostraCodice(nome, r.codice); carica(); });
     if (az === 'invia') { apri('<h3>Invia il codice</h3><p>Parte un\'email con il codice di ' + esc(soc(nome).nome) + ' e le istruzioni per iscriversi.</p><div><label for="ie">Email del destinatario</label><input id="ie" type="email" placeholder="nome@esempio.it" autocomplete="off"></div><div><label for="in">Messaggio (facoltativo)</label><textarea id="in" rows="2" maxlength="300" placeholder="Es. Ciao Marco, ecco il codice per la società."></textarea></div><div class="mr"><button class="bt" data-az="chiudi">Annulla</button><button class="bt p" data-az="invia-ok" data-s="' + esc(nome) + '">Invia email</button></div>'); return; }
@@ -767,7 +807,13 @@ function tgJv(o){
     if (az === 'stato-ok') return agisci('dash_soc', { op: 'stato', societa: nome, attiva: false }).then(function (r) { dopo(r, 'Società sospesa'); });
     if (az === 'utenti') return listaUtenti(nome);
     if (az === 'uatt') { var onu = t.getAttribute('data-on') === '1'; t.disabled = true; return agisci('dash_utente', { email: t.getAttribute('data-e'), attivo: onu }).then(function (r) { dopo(r, onu ? 'Utente attivo' : 'Utente disattivato', nome, true); }); }
-    if (az === 'nuova') { apri('<h3>Nuova società</h3><p>Crea la società e un codice licenza. Poi potrai inviare il codice per email.</p><div><label for="ns">Nome della società</label><input id="ns" maxlength="80" placeholder="Es. Basket Esempio ASD"></div><div><label for="nv">Nome da mostrare nell\'app (facoltativo)</label><input id="nv" maxlength="60"></div><div><label for="nq">Squadre della società, separate da punto e virgola</label><input id="nq" maxlength="200" placeholder="Serie C; Under 17"></div><div><label for="ne">Email del referente (riceve la guida PDF con i link ai file)</label><input id="ne" type="email" maxlength="120" placeholder="nome@societa.it" autocomplete="off"></div><div><label for="nd">Scadenza licenza (facoltativa)</label><div class="mr" style="justify-content:flex-start;margin:0 0 8px"><button class="bt" type="button" data-az="nd-g" data-g="30">+ 30 giorni</button><button class="bt" type="button" data-az="nd-g" data-g="180">+ 180 giorni</button><button class="bt" type="button" data-az="nd-g" data-g="365">+ 365 giorni</button></div><input id="nd" type="date"></div><div class="mr"><button class="bt" data-az="chiudi">Annulla</button><button class="bt p" data-az="nuova-ok">Crea società</button></div>'); return; }
+    if (az === 'nuova') { apri('<div class="mh"><div><h3>Nuova società</h3><p>Crea la società e il suo codice licenza. Cartella Drive, file da compilare e guida PDF partono in automatico.</p></div><button type="button" class="mx" data-az="chiudi" aria-label="Chiudi">' + IC_X + '</button></div>' +
+      '<div class="mbody"><div class="gz"><h4>Società</h4><div class="fd"><label for="ns">Nome della società</label><input id="ns" maxlength="80" placeholder="Es. Basket Esempio ASD" autocomplete="off"></div>' +
+      '<div class="fd"><label for="nv">Nome da mostrare nell\'app (facoltativo)</label><input id="nv" maxlength="60" autocomplete="off"></div></div>' +
+      '<div class="gz"><h4>Squadre</h4><div class="fd"><label for="nq">Squadre, separate da punto e virgola</label><input id="nq" maxlength="200" placeholder="Serie D; Under 17; Under 15" autocomplete="off"><small>La prima è la prima squadra. Le altre sono le squadre giovanili, i cui ragazzi possono essere aggregati alla prima.</small></div></div>' +
+      '<div class="gz"><h4>Licenza</h4><div class="fd"><label for="nd">Scadenza licenza (facoltativa)</label><div class="qk"><button type="button" data-az="nd-g" data-g="30">+ 30 giorni</button><button type="button" data-az="nd-g" data-g="180">+ 180 giorni</button><button type="button" data-az="nd-g" data-g="365">+ 365 giorni</button></div><input id="nd" type="date"></div></div>' +
+      '<div class="gz"><h4>Referente</h4><div class="fd"><label for="ne">Email del referente</label><input id="ne" type="email" maxlength="120" placeholder="nome@societa.it" autocomplete="off"><small>Riceve la guida PDF con i link al calendario, al roster e alla gestione Under.</small></div></div></div>' +
+      '<div class="mf"><button class="bt" data-az="chiudi">Annulla</button><button class="bt p" data-az="nuova-ok">Crea società</button></div>', 0, 'mnew'); return; }
     if (az === 'nuova-ok') { var nm = (document.getElementById('ns') || {}).value || ''; if (nm.trim().length < 3) return avviso('Scrivi il nome della società', 1); t.disabled = true; return agisci('dash_soc', { op: 'nuova', societa: nm.trim(), nomeVisibile: (document.getElementById('nv') || {}).value || '', squadre: (document.getElementById('nq') || {}).value || '', scadenza: (document.getElementById('nd') || {}).value || '', email: (document.getElementById('ne') || {}).value || '' }).then(function (r) { t.disabled = false; if (!r.ok) return avviso(r.errore || 'Creazione non riuscita.', 1); avviso(r.avviso ? ('Società creata. ' + r.avviso) : (r.emailInviata ? 'Società creata, guida inviata per email' : 'Società creata'), r.avviso ? 1 : 0); mostraCodice(nm.trim(), r.codice); carica(); }); }
   });
   document.addEventListener('change', function (e) {
@@ -788,22 +834,29 @@ function tgJv(o){
 
   /* ---------- pagina ---------- */
   var IC_GRIP = '<svg viewBox="0 0 24 24"><circle cx="9" cy="6" r="1.2"/><circle cx="15" cy="6" r="1.2"/><circle cx="9" cy="12" r="1.2"/><circle cx="15" cy="12" r="1.2"/><circle cx="9" cy="18" r="1.2"/><circle cx="15" cy="18" r="1.2"/></svg>';
+  var SLG = {
+    ig: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="7" r="1.2" fill="currentColor"/></svg>',
+    fb: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-8h2.7l.5-3.2h-3.2V7.9c0-.9.4-1.7 1.8-1.7h1.5V3.4c-.3 0-1.3-.2-2.5-.2-2.5 0-4.1 1.5-4.1 4.2v2.4H7.5V13h2.7v8z"/></svg>',
+    'in': '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="9.5" width="3.2" height="10" fill="currentColor"/><circle cx="5.6" cy="5.8" r="1.9" fill="currentColor"/><path fill="currentColor" d="M10 9.5h3v1.4c.5-.9 1.6-1.6 3.1-1.6 2.8 0 3.9 1.7 3.9 4.4v5.8h-3.2v-5.2c0-1.3-.4-2.2-1.6-2.2-1.3 0-2 .9-2 2.3v5.1H10z"/></svg>'
+  };
+  function socLogo(k) { k = k === 'Instagram' ? 'ig' : k === 'Facebook' ? 'fb' : k === 'LinkedIn' ? 'in' : k; return '<span class="slg ' + k + '" role="img" aria-label="' + (k === 'ig' ? 'Instagram' : k === 'fb' ? 'Facebook' : 'LinkedIn') + '">' + (SLG[k] || '') + '</span>'; }
+  var IC_X = '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg>';
   var IC_SIZE = '<svg viewBox="0 0 24 24"><path d="M4 12h16M8 8l-4 4 4 4M16 8l4 4-4 4"/></svg>';
   function head() { return '<header><img src="logo-tagup-bianco.svg" alt="Tagup"><div class="tit">Dashboard<small>Utilizzo dell\'app e società</small></div><div class="bts"><a class="bt p" href="https://app.tagup.it/" style="text-decoration:none">Vai all\'app</a><a class="bt" href="https://tagup.it/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit">Vai al sito</a>' + (D ? '<button class="bt" data-az="nuova">Nuova società</button><button class="bt" id="bRes" title="Riporta i riquadri alla disposizione iniziale">Ripristina layout</button>' : '') + '<button class="bt" id="bAgg">Aggiorna</button><button class="bt" id="bEsc">Esci</button></div></header>' + (D ? '<nav class="sezt" role="tablist" aria-label="Sezioni">' + Object.keys(SEZ_NOMI).map(function (k) { return '<button type="button" role="tab" class="sz' + (k === SEZ ? ' on' : '') + '" aria-selected="' + (k === SEZ) + '" data-sez="' + k + '">' + SEZ_NOMI[k] + '</button>'; }).join('') + '</nav>' : ''); }
   function pie() { return '<div class="pie"><span class="cr"><img src="logo-tagup-bianco.svg" alt=""><a href="https://tagup.it" target="_blank" rel="noopener">Tagup&trade;</a><span>tagup.it &middot; 2026</span></span><div class="so" role="group" aria-label="Seguici sui social">' + SOCIAL_TAGUP.map(function (x) { return '<a href="' + x.u + '" target="_blank" rel="noopener" aria-label="' + x.n + '" title="' + x.n + '">' + x.i + '</a>'; }).join('') + '</div></div>'; }
   function bindHead() {
     var a = document.getElementById('bAgg'), e = document.getElementById('bEsc'), r = document.getElementById('bRes');
     if (a) a.onclick = carica; if (e) e.onclick = esci;
-    if (r) r.onclick = function () { LAY = { order: [], w: {} }; salvaLay(); disegna(); };
+    if (r) r.onclick = function () { LAY = { order: [], w: {}, hid: [] }; salvaLay(); disegna(); };
   }
   function disegna() {
     if (stato === 'carico' && !D) { app.innerHTML = head() + '<div class="carico"><div class="prog" aria-hidden="true"><i></i></div>Carico i dati...</div>' + pie(); bindHead(); return; }
     if (!D) { app.innerHTML = head() + '<div class="vuoto">' + esc(errore || 'Nessun dato.') + '</div>' + pie(); bindHead(); return; }
-    var L = riquadri().filter(function (x) { return x.sez === SEZ; }), pos = {}; LAY.order.forEach(function (id, i) { pos[id] = i; });
+    var L0 = riquadri().filter(function (x) { return x.sez === SEZ; }), HID = LAY.hid || [], L = L0.filter(function (x) { return HID.indexOf(x.id) < 0; }), NASC = L0.filter(function (x) { return HID.indexOf(x.id) >= 0; }), pos = {}; LAY.order.forEach(function (id, i) { pos[id] = i; });
     L.forEach(function (x, i) { x._o = pos[x.id] !== undefined ? pos[x.id] : 1000 + i; }); L.sort(function (a, b) { return a._o - b._o; });
-    var h = head() + '<p class="hint" id="hintSez">Trascina i riquadri dall\'icona con i puntini per spostarli, usa la freccia per cambiare la larghezza. La disposizione resta salvata su questo dispositivo.</p><div id="board">' + L.map(function (x) {
+    var h = head() + '<p class="hint" id="hintSez">Trascina i riquadri dall\'icona con i puntini per spostarli, usa la freccia per cambiare la larghezza e la X per nasconderli (li ritrovi in alto). La disposizione resta salvata su questo dispositivo.</p>' + (NASC.length ? '<div class="hidbar" id="hidbar"><span>Nascosti:</span>' + NASC.map(function (x) { var nm = String(x.t || (String(x.h || '').match(/class="kl">([^<]*)/) || [])[1] || x.id).replace(/<[^>]*>/g, '').replace(/^soc:/, ''); return '<button type="button" data-sh="' + esc(x.id) + '" title="Mostra di nuovo">' + esc(nm) + ' +</button>'; }).join('') + '<button type="button" data-sh="*">Mostra tutti</button></div>' : '') + '<div id="board">' + L.map(function (x) {
       var w = LAY.w[x.id]; if (x.ws.indexOf(w) < 0) w = x.w;
-      return '<section class="it w' + w + (x.k ? ' kpi' : '') + '" data-id="' + esc(x.id) + '" data-ws="' + x.ws.join(',') + '"><div class="tools"><button class="tl sbtn" data-sz title="Cambia larghezza" aria-label="Cambia larghezza">' + IC_SIZE + '</button><button class="tl grip" title="Trascina per spostare" aria-label="Sposta il riquadro">' + IC_GRIP + '</button></div>' +
+      return '<section class="it w' + w + (x.k ? ' kpi' : '') + '" data-id="' + esc(x.id) + '" data-ws="' + x.ws.join(',') + '"><div class="tools"><button class="tl sbtn" data-sz title="Cambia larghezza" aria-label="Cambia larghezza">' + IC_SIZE + '</button><button class="tl grip" title="Trascina per spostare" aria-label="Sposta il riquadro">' + IC_GRIP + '</button><button class="tl cls" data-cl title="Nascondi questo riquadro" aria-label="Nascondi questo riquadro">' + IC_X + '</button></div>' +
         (x.t ? '<div class="ct">' + x.t + '</div>' + (x.s ? '<div class="sub">' + x.s + '</div>' : '') : '') + x.h + '</section>';
     }).join('') + '</div>' +
       '<p class="nota">Dati aggregati: la dashboard non mostra mai statistiche di singoli atleti, che restano di proprietà della società. Gli accessi arrivano dal registro dell\'app (si conservano le ultime settimane), le sezioni aperte da quando gli utenti hanno l\'ultima versione. Aggiornato il ' + fmtData(D.generato) + '.</p>' + pie();;
@@ -823,7 +876,13 @@ function tgJv(o){
   function bindBoard() {
     var b = document.getElementById('board'); if (!b) return;
     function salvaOrdine() { var vis = Array.prototype.map.call(b.querySelectorAll('.it'), function (x) { return x.getAttribute('data-id'); }); LAY.order = vis.concat((LAY.order || []).filter(function (id) { return vis.indexOf(id) < 0; })); salvaLay(); }
+    var hb = document.getElementById('hidbar');
+    if (hb) hb.addEventListener('click', function (e) {
+      var q = e.target.closest('[data-sh]'); if (!q) return; var id = q.getAttribute('data-sh'), ids = id === '*' ? Array.prototype.map.call(document.querySelectorAll('#hidbar [data-sh]'), function (x) { return x.getAttribute('data-sh'); }) : [id];
+      LAY.hid = (LAY.hid || []).filter(function (k) { return ids.indexOf(k) < 0; }); salvaLay(); disegna();
+    });
     b.addEventListener('click', function (e) {
+      var c = e.target.closest('[data-cl]'); if (c) { var cid = c.closest('.it').getAttribute('data-id'); LAY.hid = (LAY.hid || []).concat([cid]); salvaLay(); disegna(); return; }
       var s = e.target.closest('[data-sz]'); if (!s) return;
       var it = s.closest('.it'), ws = it.getAttribute('data-ws').split(',').map(Number), cur = ws.filter(function (w) { return it.classList.contains('w' + w); })[0] || ws[0];
       var nx = ws[(ws.indexOf(cur) + 1) % ws.length]; ws.forEach(function (w) { it.classList.remove('w' + w); }); it.classList.add('w' + nx);
