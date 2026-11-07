@@ -1,1 +1,48 @@
-const _0x425593=_0x35e0;(function(_0x4404d4,_0x495b5b){const _0x450611=_0x35e0,_0x42ecca=_0x4404d4();while(!![]){try{const _0x47ff54=-parseInt(_0x450611(0x186))/0x1+parseInt(_0x450611(0x163))/0x2+-parseInt(_0x450611(0x179))/0x3*(-parseInt(_0x450611(0x17c))/0x4)+-parseInt(_0x450611(0x174))/0x5+parseInt(_0x450611(0x15f))/0x6*(-parseInt(_0x450611(0x166))/0x7)+-parseInt(_0x450611(0x18a))/0x8*(-parseInt(_0x450611(0x17f))/0x9)+parseInt(_0x450611(0x175))/0xa;if(_0x47ff54===_0x495b5b)break;else _0x42ecca['push'](_0x42ecca['shift']());}catch(_0x14b859){_0x42ecca['push'](_0x42ecca['shift']());}}}(_0x1bb9,0xc6851));function _0x35e0(_0x4a85cd,_0xc2a40b){_0x4a85cd=_0x4a85cd-0x155;const _0x1bb90e=_0x1bb9();let _0x35e05b=_0x1bb90e[_0x4a85cd];if(_0x35e0['uCtAqw']===undefined){var _0x5aca7f=function(_0x37b2fb){const _0x5c96af='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x2ec191='',_0x346422='';for(let _0x35cf7a=0x0,_0x2d744f,_0x4da94b,_0xec18a4=0x0;_0x4da94b=_0x37b2fb['charAt'](_0xec18a4++);~_0x4da94b&&(_0x2d744f=_0x35cf7a%0x4?_0x2d744f*0x40+_0x4da94b:_0x4da94b,_0x35cf7a++%0x4)?_0x2ec191+=String['fromCharCode'](0xff&_0x2d744f>>(-0x2*_0x35cf7a&0x6)):0x0){_0x4da94b=_0x5c96af['indexOf'](_0x4da94b);}for(let _0x1af6dc=0x0,_0x159b1a=_0x2ec191['length'];_0x1af6dc<_0x159b1a;_0x1af6dc++){_0x346422+='%'+('00'+_0x2ec191['charCodeAt'](_0x1af6dc)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x346422);};_0x35e0['JuvKvD']=_0x5aca7f,_0x35e0['TqVjWV']={},_0x35e0['uCtAqw']=!![];}const _0x49224a=_0x1bb90e[0x0],_0x4bb4d1=_0x4a85cd+_0x49224a,_0x22c67e=_0x35e0['TqVjWV'][_0x4bb4d1];return!_0x22c67e?(_0x35e05b=_0x35e0['JuvKvD'](_0x35e05b),_0x35e0['TqVjWV'][_0x4bb4d1]=_0x35e05b):_0x35e05b=_0x22c67e,_0x35e05b;}try{_0x425593(0x189)!=typeof Notification&&_0x425593(0x173)===Notification[_0x425593(0x15c)]&&importScripts(_0x425593(0x167));}catch(_0x2ec191){}const VERSIONE='grypho-v326',FILE=['./','index.html',_0x425593(0x17e),'tagging-under.html','config.js',_0x425593(0x169),_0x425593(0x182),'logo-perugia.png','logo-tagup.svg','logo-tagup-bianco.svg',_0x425593(0x181),_0x425593(0x155),_0x425593(0x157),_0x425593(0x184),_0x425593(0x160),'fonts/hanken-grotesk-latin-500-normal.woff2',_0x425593(0x172),_0x425593(0x15e),_0x425593(0x16f),_0x425593(0x188),_0x425593(0x16a),_0x425593(0x18e)];function _0x1bb9(){const _0xaf5d1e=['zM9UDhmVyMfYBg93lwnVBMrLBNnLzc1SyxrPBI05mdaTBM9YBwfSlNDVzMyY','Chv0','Bg9NBY1JB21WBgv0BY5ZDMC','Bw9Kzq','AwnVBI0XotiUCg5N','AgvHzgvYCW','B3bLBG','r0vu','ywn0AxzHDgu','CgvYBwLZC2LVBG','zMv0y2G','zM9UDhmVAgfUA2vUlwDYB3rLC2STBgf0Aw4TnZaWlw5VCM1HBc53B2zMmG','mtK3mJKZofjVzLrIAG','zM9UDhmVAgfUA2vUlwDYB3rLC2STBgf0Aw4TndaWlw5VCM1HBc53B2zMmG','y2XPzw50CW','zw5KC1DPDgG','mJe3mZG4ngPktvnZvG','CMvZCg9UzfDPDgG','B3jPz2LU','n2rWqxfwqW','Ahr0Chm6lY9Jzg4UB25LC2LNBMfSlMnVBs9ZzgTZl3DLyI92mtyVt25Lu2LNBMfSu0rllNn3lMPZ','Bwf0y2G','BwfUAwzLC3qUD2vIBwfUAwzLC3q','zM9UDhmVyMfYBg93lwnVBMrLBNnLzc1SyxrPBI04mdaTBM9YBwfSlNDVzMyY','Bwv0Ag9K','ywXS','Aw5ZDgfSBa','CMfUz2u','zM9UDhmVAgfUA2vUlwDYB3rLC2STBgf0Aw4TodaWlw5VCM1HBc53B2zMmG','y2XHAw0','Cgf0Ag5HBwu','zM9UDhmVAgfUA2vUlwDYB3rLC2STBgf0Aw4TnJaWlw5VCM1HBc53B2zMmG','z3jHBNrLza','mZeYntiZnwnqy2n6sq','ndu4nJeWDuDRu1fI','z2v0','BM8Ty2fJAgu','CMvXDwvZDa','mZmZC0rRwMfi','Aw5KzxGUAhrTBa','y2f0y2G','nti2odrdtKHhtKy','DxjS','DgfNz2LUzY5ODg1S','mJDyBMDkDxq','y2XVBMu','Bg9NBY10ywD1Cc5WBMC','Bg9NBY5ZDMC','BM8TC3rVCMu','AwnVBI01mtiUCg5N','D2fPDfvUDgLS','mta1mtGYmeXIzxDHta','A2v5CW','zM9UDhmVyMfYBg93lwnVBMrLBNnLzc1SyxrPBI03mdaTBM9YBwfSlNDVzMyY','Dw5KzwzPBMvK','ntK3ndq4C1DkBgnl','DgHLBG','zMLSDgvY','ywrKrxzLBNrmAxn0zw5LCG'];_0x1bb9=function(){return _0xaf5d1e;};return _0x1bb9();}self['addEventListener'](_0x425593(0x16d),_0x346422=>{const _0x101916=_0x425593;_0x346422[_0x101916(0x185)](caches[_0x101916(0x159)](VERSIONE)[_0x101916(0x18b)](_0x35cf7a=>_0x35cf7a['addAll'](FILE))['then'](()=>self['skipWaiting']()));}),self[_0x425593(0x18d)](_0x425593(0x15b),_0x2d744f=>{const _0x4e858a=_0x425593;_0x2d744f['waitUntil'](caches[_0x4e858a(0x187)]()['then'](_0x4da94b=>Promise[_0x4e858a(0x16c)](_0x4da94b[_0x4e858a(0x18c)](_0xec18a4=>_0xec18a4!==VERSIONE)['map'](_0x1af6dc=>caches['delete'](_0x1af6dc))))['then'](()=>self[_0x4e858a(0x161)][_0x4e858a(0x170)]()));}),self[_0x425593(0x18d)](_0x425593(0x15d),_0x159b1a=>{const _0x5aa977=_0x425593,_0x29be8f=_0x159b1a[_0x5aa977(0x178)];_0x5aa977(0x15a)===_0x29be8f[_0x5aa977(0x16b)]&&new URL(_0x29be8f[_0x5aa977(0x17d)])[_0x5aa977(0x165)]===location[_0x5aa977(0x165)]&&(_0x5aa977(0x183)===_0x29be8f['cache']||_0x29be8f[_0x5aa977(0x158)]['get'](_0x5aa977(0x16e))||('navigate'===_0x29be8f[_0x5aa977(0x156)]||/\.(html|js)$/['test'](new URL(_0x29be8f['url'])[_0x5aa977(0x171)])||new URL(_0x29be8f[_0x5aa977(0x17d)])[_0x5aa977(0x171)][_0x5aa977(0x162)]('/')?_0x159b1a[_0x5aa977(0x164)](caches[_0x5aa977(0x159)](VERSIONE)[_0x5aa977(0x18b)](_0x5581b6=>_0x5581b6[_0x5aa977(0x168)](_0x29be8f,{'ignoreSearch':!0x0})[_0x5aa977(0x18b)](_0x5bdcce=>{const _0x332e2e=_0x5aa977,_0x4fad3d=fetch(_0x29be8f,{'cache':_0x332e2e(0x177)})[_0x332e2e(0x18b)](_0x23be50=>(_0x23be50&&_0x23be50['ok']&&!_0x29be8f[_0x332e2e(0x158)][_0x332e2e(0x176)](_0x332e2e(0x16e))&&_0x5581b6[_0x332e2e(0x18f)](_0x29be8f,_0x23be50['clone']()),_0x23be50));return _0x5bdcce?(_0x159b1a[_0x332e2e(0x185)](_0x4fad3d[_0x332e2e(0x17b)](()=>{})),_0x5bdcce):_0x4fad3d[_0x332e2e(0x17b)](()=>_0x5581b6[_0x332e2e(0x168)](_0x332e2e(0x17a)));}))):_0x159b1a[_0x5aa977(0x164)](caches[_0x5aa977(0x159)](VERSIONE)[_0x5aa977(0x18b)](_0x1fddcf=>_0x1fddcf[_0x5aa977(0x168)](_0x29be8f)[_0x5aa977(0x18b)](_0x10807b=>{const _0x45d00a=_0x5aa977,_0x3b1fe8=fetch(_0x29be8f,{'cache':_0x45d00a(0x177)})['then'](_0x3791e6=>(_0x3791e6&&_0x3791e6['ok']&&_0x1fddcf[_0x45d00a(0x18f)](_0x29be8f,_0x3791e6[_0x45d00a(0x180)]()),_0x3791e6));return _0x10807b?(_0x159b1a[_0x45d00a(0x185)](_0x3b1fe8[_0x45d00a(0x17b)](()=>{})),_0x10807b):_0x3b1fe8[_0x45d00a(0x17b)](()=>caches['match'](_0x45d00a(0x17a)));})))));});
+// Service worker: salva i file dell'app per aprirla anche con poca copertura.
+// I dati (allenamenti, scouting) non passano da qui: li gestisce l'app.
+try { if (typeof Notification !== 'undefined' && Notification.permission === 'granted') importScripts('https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.sw.js'); } catch (e) { /* senza rete: le notifiche tornano alla prossima attivazione */ }
+const VERSIONE = 'grypho-v327';
+const FILE = [
+  './', 'index.html', 'tagging.html', 'tagging-under.html', 'config.js', 'manifest.webmanifest', 'logo.svg', 'logo-perugia.png', 'logo-tagup.svg', 'logo-tagup-bianco.svg', 'logo-tagup.png', 'logo-completo.svg', 'icon-192.png', 'icon-512.png',
+  'fonts/hanken-grotesk-latin-400-normal.woff2', 'fonts/hanken-grotesk-latin-500-normal.woff2', 'fonts/hanken-grotesk-latin-600-normal.woff2',
+  'fonts/hanken-grotesk-latin-700-normal.woff2', 'fonts/hanken-grotesk-latin-800-normal.woff2',
+  'fonts/barlow-condensed-latin-700-normal.woff2', 'fonts/barlow-condensed-latin-800-normal.woff2', 'fonts/barlow-condensed-latin-900-normal.woff2'
+];
+
+self.addEventListener('install', (e) => {
+  e.waitUntil(caches.open(VERSIONE).then((c) => c.addAll(FILE)).then(() => self.skipWaiting()));
+});
+
+self.addEventListener('activate', (e) => {
+  e.waitUntil(
+    caches.keys()
+      .then((chiavi) => Promise.all(chiavi.filter((k) => k !== VERSIONE).map((k) => caches.delete(k))))
+      .then(() => self.clients.claim())
+  );
+});
+
+self.addEventListener('fetch', (e) => {
+  const req = e.request;
+  if (req.method !== 'GET' || new URL(req.url).origin !== location.origin) return;
+  if (req.cache === 'no-store' || req.headers.get('range')) return;   // il controllo versione va sempre in rete
+  // pagine e script: prima la rete (cosi dopo un aggiornamento si vede subito la versione nuova), con la copia salvata se manca la copertura
+  const pagina = req.mode === 'navigate' || /\.(html|js)$/.test(new URL(req.url).pathname) || new URL(req.url).pathname.endsWith('/');
+  if (pagina) {
+    /* apertura veloce: si mostra subito la copia salvata e intanto si scarica quella nuova (la vedi alla prossima apertura, o subito con l'avviso di aggiornamento) */
+    e.respondWith(
+      caches.open(VERSIONE).then((c) => c.match(req, { ignoreSearch: true }).then((salvata) => {
+        const rete = fetch(req, { cache: 'no-cache' }).then((res) => { if (res && res.ok && !req.headers.get('range')) c.put(req, res.clone()); return res; });
+        if (salvata) { e.waitUntil(rete.catch(() => {})); return salvata; }
+        return rete.catch(() => c.match('index.html'));
+      }))
+    );
+    return;
+  }
+  e.respondWith(
+    caches.open(VERSIONE).then((c) => c.match(req).then((salvata) => {
+      const rete = fetch(req, { cache: 'no-cache' }).then((res) => { if (res && res.ok) c.put(req, res.clone()); return res; });
+      if (salvata) { e.waitUntil(rete.catch(() => {})); return salvata; }
+      return rete.catch(() => caches.match('index.html'));
+    }))
+  );
+});
