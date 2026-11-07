@@ -1781,7 +1781,7 @@ img.logo.cm-lg{width:30px;height:30px;flex:none}
   .lav .lgl{display:block;font:700 11px/1 var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);grid-column:1/-1;justify-self:start}
 }
 @media (min-width:900px) and (min-height:860px){
-  .lav .lrail{grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:clamp(58px,9vh,88px)}
+  .lav .lrail{grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:clamp(52px,7.6vh,80px)}
   .lav .lt span{display:block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11px}
   .lav .lgrp .lt{min-height:clamp(58px,8vh,76px)}
   .lav .lgrp .lt span{display:block}
@@ -1890,6 +1890,19 @@ a.chat-top,a.chat-top:hover,a.tab{text-decoration:none}
 #intro .dt.d{left:16px;bottom:calc(20px + env(safe-area-inset-bottom,0px))}
 /* jarvis v2 */#intro .jr{fill:none;stroke:#ff5a1f;stroke-width:1.5;transform-origin:200px 200px}#intro .j1{stroke-dasharray:1131;stroke-dashoffset:1131;animation:jvd 1.1s .05s ease-out forwards}#intro .j2{stroke-dasharray:6 10;opacity:.6;animation:jvspin 9s linear infinite}#intro .j3{stroke-width:2;opacity:0;animation:jvpulse .9s 1.15s ease-out forwards}#intro .j4{stroke-width:4;stroke-dasharray:1;stroke-dashoffset:1;animation:jvd 1s .15s cubic-bezier(.4,.1,.2,1) forwards}#intro .j5{stroke-width:2.5;stroke-dasharray:1;stroke-dashoffset:1;animation:jvd .8s .5s cubic-bezier(.4,.1,.2,1) forwards}#intro .js{stroke-width:2.5;stroke-dasharray:1;stroke-dashoffset:1;animation:jvd .9s .35s cubic-bezier(.4,.1,.2,1) forwards}#intro .jfl{fill:#ff5a1f;stroke:none;opacity:0;animation:jvfl .6s .9s ease-out forwards}#intro .jdc{fill:#0b0d10;stroke:none}#intro .lp{fill:rgba(255,90,31,0);stroke:#ff5a1f;stroke-width:4;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:jvd 1.1s .55s cubic-bezier(.4,.1,.2,1) forwards,jvlf .45s 1.4s ease-out forwards}@keyframes jvd{to{stroke-dashoffset:0}}@keyframes jvspin{to{transform:rotate(360deg)}}@keyframes jvpulse{0%{opacity:.9;transform:scale(.8)}100%{opacity:0;transform:scale(1.4)}}@keyframes jvfl{to{opacity:.16}}@keyframes jvlf{to{fill:rgba(244,241,234,.95);stroke:rgba(244,241,234,.95)}}@media (prefers-reduced-motion:reduce){#intro *{animation:none!important}#intro .jr{stroke-dashoffset:0}}
 /* jarvis v3 radar */#intro .rrg{fill:none;stroke:#ff5a1f;stroke-width:1;opacity:.5}#intro .rtk{stroke:#ff5a1f;stroke-width:2;opacity:0;animation:jvo .6s .2s forwards}#intro .rsw{transform-origin:200px 200px;animation:jvspin 1.6s .1s linear 2}#intro .rbl{fill:none;stroke:#ff5a1f;stroke-width:3;opacity:0;animation:jvo .3s .5s forwards}#intro .rsm{fill:none;stroke:#ff5a1f;stroke-width:1.8;opacity:0;animation:jvo .3s .8s forwards}#intro .lp{fill:rgba(255,90,31,0);stroke:#ff5a1f;stroke-width:4;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:jvd 1s .9s forwards,jvlf .4s 1.8s forwards}@keyframes jvo{to{opacity:1}}@media (prefers-reduced-motion:reduce){#intro *{animation:none!important}#intro .lp{stroke-dashoffset:0}}
+
+/* --- lavagna: aiuto per posizionare il campo, finestra intestazione --- */
+.lav .lhint{flex:1 1 100%;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px;padding:4px 8px;color:var(--acc)}
+.lav .lhint span{font:700 14px/1.2 var(--display);letter-spacing:.06em;text-transform:uppercase;text-align:center}
+.lav .lhint .lb{min-height:36px;padding:4px 12px;font-size:13px}
+.lav-txt .lt-f{display:flex;flex-direction:column;gap:4px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;opacity:.9}
+.lav-txt .lt-f input{width:100%;box-sizing:border-box;font-size:17px;padding:10px;border:1px solid var(--line);background:#0f1318;color:#f4f1ea;font-family:inherit;text-transform:none;letter-spacing:0}
+
+/* --- scelta società degli ingegneri: tutto centrato --- */
+.ing-s{align-items:stretch;text-align:center}
+.ing-s h2,.ing-s .ing-p{width:100%;margin-left:auto;margin-right:auto;text-align:center!important}
+.ing-s .ing-p{max-width:46ch}
+.ing-s>.btn{align-self:center}
 </style>
 </head>
 <body>
@@ -8858,7 +8871,7 @@ document.addEventListener('input', function (e) {
 function souAdmin() { return !!(st.dati && st.dati.utente && st.dati.utente.admin) && !inDemo; }
 function utAttesa() { return (st.dati && st.dati.utente && st.dati.utente.inAttesa) || 0; }
 function htmlUtentiProfilo() {
-  if (st.sessione && st.sessione.ing && !inDemo) return '<button class="btn ghost" data-az="ingcambia">' + IC.team + 'Cambia società (ingegnere)</button>' + (souAdmin() ? '<button class="btn ghost" data-az="utopen">' + IC.team + 'Utenti della società</button>' : '');
+  if (st.sessione && st.sessione.ing && !inDemo) return '<a class="btn ghost" href="dashboard.html" target="_blank" rel="noopener" style="text-decoration:none">' + IC.podio + 'Dashboard Tagup</a><button class="btn ghost" data-az="ingcambia">' + IC.team + 'Cambia società (ingegnere)</button>' + (souAdmin() ? '<button class="btn ghost" data-az="utopen">' + IC.team + 'Utenti della società</button>' : '');
   if (!souAdmin()) return '';
   var n = utAttesa();
   return '<button class="btn ghost" data-az="utopen">' + IC.team + 'Utenti della società' + (n ? ' (' + n + ' in attesa)' : '') + '</button>';
@@ -8875,11 +8888,11 @@ function ingCarica() {
   chiama('ing_societa', { token: st.sessione.token }).then(function (r) { st.ingBusy = ''; if (r && r.ok) { st.ingLista = r.societa || []; st.ingCorr = r.corrente || ''; } else st.ingErr = (r && r.errore) || 'Elenco non disponibile.'; disegna(); }, function () { st.ingBusy = ''; st.ingErr = 'Connessione assente.'; disegna(); });
 }
 function vistaIngScelta() {
-  var l = st.ingLista, h = '<div class="ing-s"><div class="logo s">' + (typeof IC !== 'undefined' && IC.podio ? '' : '') + '</div><h2>Entra come ingegnere</h2><p class="rp-nota" style="text-align:center">Scegli la società con cui lavorare. Dentro avrai i diritti di amministratore, poi scegli la squadra come al solito.</p>';
+  var l = st.ingLista, h = '<div class="ing-s"><h2>Entra come ingegnere</h2><p class="rp-nota ing-p">Scegli la società con cui lavorare. Dentro avrai i diritti di amministratore, poi scegli la squadra come al solito.</p>';
   if (st.ingErr) h += '<div class="vuoto">' + esc(st.ingErr) + '</div>';
   else if (!l) h += '<div class="vuoto carica"><span class="loader sm"></span><span>Carico le società...</span></div>';
-  else h += '<div class="ing-l">' + l.map(function (x) { return '<button type="button" class="ing-b' + (x.attiva ? '' : ' off') + '" data-az="ingentra" data-s="' + esc(x.chiave) + '">' + (x.logo ? '<img src="' + esc(x.logo) + '" alt="">' : '<span class="ing-i"></span>') + '<span class="ing-t"><b>' + esc(x.nome) + '</b><small>' + (x.squadre && x.squadre.length ? esc(x.squadre.join(' - ')) : 'Nessuna squadra indicata') + (x.attiva ? '' : ' - licenza non attiva') + '</small></span></button>'; }).join('') + '</div>';
-  return h + '<a class="btn ghost" href="dashboard.html" target="_blank" rel="noopener">' + IC.podio + 'Dashboard Tagup</a><button class="btn ghost" data-az="esci">' + IC.uscita + 'Esci</button></div>';
+  else h += '<div class="ing-l">' + l.map(function (x) { return '<button type="button" class="ing-b' + (x.attiva ? '' : ' off') + '" data-az="ingentra" data-s="' + esc(x.chiave) + '">' + (x.logo ? '<img src="' + esc(x.logo) + '" alt="">' : '<span class="ing-i"></span>') + '<span class="ing-t"><b>' + esc(x.nome) + '</b><small>' + (x.squadre && x.squadre.length ? esc(x.squadre.join(' - ')) : (/grypho/i.test(x.nome || '') ? 'Serie B - Serie C' : '')) + (x.attiva ? '' : (x.squadre && x.squadre.length || /grypho/i.test(x.nome || '') ? ' - ' : '') + 'licenza non attiva') + '</small></span></button>'; }).join('') + '</div>';
+  return h + '<button class="btn ghost" data-az="esci">' + IC.uscita + 'Esci</button></div>';
 }
 function ingEntra(nome) {
   if (st.ingBusy) return; st.ingBusy = 'entra';
@@ -9210,7 +9223,7 @@ function disegna() {
   try { document.body.classList.toggle('u-sez', !!st.sessione && (st.tab === 'ugrp' || st.tab === 'under')); } catch (e2) { /* ok */ }
 }
 function disegna0() {
-  try { document.documentElement.classList.toggle('tg-ac', !st.sessione); var tcm = document.querySelector('meta[name="theme-color"]'); if (tcm && !st.sessione) tcm.setAttribute('content', '#0b0d10'); } catch (eAc) { /* ok */ }
+  try { document.documentElement.classList.toggle('tg-ac', !st.sessione || !!(st.sessione.ing && !inDemo && !ingFatto())); var tcm = document.querySelector('meta[name="theme-color"]'); if (tcm && !st.sessione) tcm.setAttribute('content', '#0b0d10'); } catch (eAc) { /* ok */ }
   if (st.privacy) { app.innerHTML = '<div class="screen">' + vistaPrivacy() + '</div>' + (st.sessione ? barra() : ''); return; }
   if (!st.sessione) { app.innerHTML = vistaLogin(); return; }
   if (st.sessione.ing && !inDemo && !ingFatto()) { app.innerHTML = '<div class="screen">' + vistaIngScelta() + '</div>'; ingCarica(); return; }
@@ -9254,8 +9267,8 @@ function eIpad() { return true; }   /* la lavagna ora funziona da iPad, computer
 var lavagna = (function () {
   var W = 1600, PAG = 900, root = null, cv = null, cx = null, S = null, fine = null;
   var COLORI = ['#111111', '#d62828', '#1d4ed8', '#15803d', '#e07b00', '#7e22ce'];
-  var GRUPPI = [['Disegno', [['penna', 'Penna'], ['evid', 'Evidenziatore'], ['gomma', 'Gomma']]], ['Linee', [['taglio', 'Taglio'], ['passaggio', 'Passaggio'], ['palleggio', 'Palleggio'], ['blocco', 'Blocco']]], ['Giocatori', [['gioc', 'Attacc. cerchiato'], ['giocn', 'Attaccante'], ['dif', 'Difensore'], ['assist', 'A cerchiata'], ['assistn', 'A'], ['cono', 'Cono']]], ['Testo', [['testo', 'Scrivi testo']]], ['Modifica', [['sel', 'Seleziona']]]];
-  function nuovo() { return { items: [], H: PAG, tool: 'penna', col: COLORI[0], ts: 30, w: 4, nG: 1, nD: 1, penVisto: false, cur: null, hist: [], sel: [], drag: null, multi: false }; }
+  var GRUPPI = [['Disegno', [['penna', 'Penna'], ['evid', 'Evidenziatore'], ['gomma', 'Gomma']]], ['Linee', [['taglio', 'Taglio'], ['passaggio', 'Passaggio'], ['palleggio', 'Palleggio'], ['blocco', 'Blocco']]], ['Giocatori', [['gioc', 'Attacc. cerchiato'], ['giocn', 'Attaccante'], ['dif', 'Difensore'], ['assist', 'A cerchiata'], ['assistn', 'A'], ['cono', 'Cono']]], ['Testo', [['testo', 'Scrivi testo']]], ['Modifica', [['sel', 'Seleziona'], ['muovic', 'Sposta campo']]]];
+  function nuovo() { return { items: [], H: PAG, tool: 'penna', col: COLORI[0], ts: 30, w: 4, nG: 1, nD: 1, penVisto: false, cur: null, hist: [], sel: [], drag: null, multi: false, place: null, ghost: null, pl: null }; }
   function salva() { S.hist.push(JSON.stringify({ items: S.items, H: S.H, nG: S.nG, nD: S.nD })); if (S.hist.length > 60) S.hist.shift(); }
   function annulla() { if (!S.hist.length) return; var o = JSON.parse(S.hist.pop()); S.sel = []; S.drag = null; S.items = o.items; S.H = o.H; S.nG = o.nG; S.nD = o.nD; ridim(); ridisegna(); }
   function ridim() { cv.width = W; cv.height = S.H; setTimeout(barraScorri, 0); }
@@ -9268,6 +9281,17 @@ var lavagna = (function () {
     S.items.push({ t: 'campo', tipo: tipo, x: pos.x, y: pos.y });
     if (pos.y + PAG > S.H) { S.H = pos.y + PAG; ridim(); }
     ridisegna();
+  }
+  function ingombro(tipo) { return { w: tipo === 'full' ? 1600 : 800, h: PAG }; }
+  function piazzaCampo(tipo, p) {   /* il campo si mette dove si tocca il foglio: il punto toccato diventa il centro */
+    var g = ingombro(tipo), x = Math.max(0, Math.min(W - g.w, Math.round(p.x - g.w / 2))), y = Math.max(0, Math.round(p.y - g.h / 2));
+    salva(); S.items.push({ t: 'campo', tipo: tipo, x: x, y: y }); S.place = null; S.ghost = null; S.pl = null;
+    if (y + PAG > S.H) { S.H = y + PAG; ridim(); }
+    ridisegna(); aggiornaBarra();
+  }
+  function campoSotto(p) {
+    for (var k = S.items.length - 1; k >= 0; k--) { var c = S.items[k]; if (c.t !== 'campo') continue; var g = ingombro(c.tipo); if (p.x >= c.x && p.x <= c.x + g.w && p.y >= c.y && p.y <= c.y + g.h) return c; }
+    return null;
   }
   function meta(c) {   /* meta campo in coordinate del campo (50 px per metro), canestro sul lato sinistro */
     c.beginPath(); c.rect(0, 252.5, 290, 245); c.stroke();
@@ -9376,6 +9400,7 @@ var lavagna = (function () {
     cx.save(); cx.strokeStyle = '#0a84ff'; cx.fillStyle = 'rgba(10,132,255,.10)'; cx.lineWidth = 3; cx.setLineDash([10, 7]);
     S.sel.forEach(function (it) { var b = box(it); if (b) cx.strokeRect(b.x0, b.y0, b.x1 - b.x0, b.y1 - b.y0); });
     if (S.drag && S.drag.mode === 'marq') { var q = S.drag, x0 = Math.min(q.start.x, q.cur.x), y0 = Math.min(q.start.y, q.cur.y), w0 = Math.abs(q.cur.x - q.start.x), h0 = Math.abs(q.cur.y - q.start.y); cx.fillRect(x0, y0, w0, h0); cx.strokeRect(x0, y0, w0, h0); }
+    if (S.place && S.ghost) { cx.strokeStyle = '#d4af00'; cx.fillStyle = 'rgba(251,255,18,.18)'; cx.lineWidth = 5; cx.setLineDash([16, 10]); cx.fillRect(S.ghost.x, S.ghost.y, S.ghost.w, S.ghost.h); cx.strokeRect(S.ghost.x, S.ghost.y, S.ghost.w, S.ghost.h); }
     cx.restore();
   }
   function box(it) {
@@ -9455,9 +9480,15 @@ var lavagna = (function () {
     if (e.pointerType === 'pen') S.penVisto = true;
     if (e.pointerType === 'touch' && S.penVisto) return;
     if (S.tool === 'mano') return;
+    if (S.place) { S.pl = { x: e.clientX, y: e.clientY }; if (e.pointerType === 'mouse') e.preventDefault(); return; }
     e.preventDefault(); try { cv.setPointerCapture(e.pointerId); } catch (x) {}
     var p = pos(e), t = S.tool;
     S._gs = false;
+    if (t === 'muovic') {
+      var cm = campoSotto(p); if (!cm) return;
+      var g0 = ingombro(cm.tipo), its = S.items.filter(function (it) { if (it.t === 'campo') return false; var b = box(it); if (!b) return false; var mx = (b.x0 + b.x1) / 2, my = (b.y0 + b.y1) / 2; return mx >= cm.x && mx <= cm.x + g0.w && my >= cm.y && my <= cm.y + g0.h; });
+      S.drag = { mode: 'campo', c: cm, its: its, start: p, last: p, moved: false }; return;
+    }
     if (t === 'sel') {
       var top = null, k;
       for (k = S.items.length - 1; k >= 0; k--) { if (vicino(S.items[k], p)) { top = S.items[k]; break; } }
@@ -9486,6 +9517,15 @@ var lavagna = (function () {
     if (!S || S.tool === 'mano') return;
     if (e.pointerType === 'touch' && S.penVisto) return;
     var p = pos(e);
+    if (S.place) { var gg = ingombro(S.place); S.ghost = { x: Math.max(0, Math.min(W - gg.w, p.x - gg.w / 2)), y: Math.max(0, p.y - gg.h / 2), w: gg.w, h: gg.h }; if (e.pointerType === 'mouse') pianifica(); return; }
+    if (S.tool === 'muovic') {
+      var d2 = S.drag; if (!d2 || d2.mode !== 'campo') return; e.preventDefault();
+      if (!d2.moved) { if (Math.abs(p.x - d2.start.x) + Math.abs(p.y - d2.start.y) < 8) return; salva(); d2.moved = true; d2.last = d2.start; }
+      var gc = ingombro(d2.c.tipo), nx = Math.max(0, Math.min(W - gc.w, d2.c.x + (p.x - d2.last.x))), ny = Math.max(0, d2.c.y + (p.y - d2.last.y));
+      var ddx = nx - d2.c.x, ddy = ny - d2.c.y; d2.last = { x: d2.last.x + ddx, y: d2.last.y + ddy };
+      d2.c.x = nx; d2.c.y = ny; d2.its.forEach(function (it) { sposta(it, ddx, ddy); });
+      S.baseOk = false; pianifica(); return;
+    }
     if (S.tool === 'sel') {
       var g = S.drag; if (!g) return; e.preventDefault();
       if (g.mode === 'move') {
@@ -9545,7 +9585,17 @@ var lavagna = (function () {
     cx.restore();
   }
   function marqRect(g) { return padr({ x0: Math.min(g.start.x, g.cur.x), y0: Math.min(g.start.y, g.cur.y), x1: Math.max(g.start.x, g.cur.x), y1: Math.max(g.start.y, g.cur.y) }, 8); }
-  function su() {
+  function su(e) {
+    if (S && S.place) {
+      var q0 = S.pl; S.pl = null;
+      if (q0 && e && e.type === 'pointerup' && Math.abs(e.clientX - q0.x) + Math.abs(e.clientY - q0.y) < 14) piazzaCampo(S.place, pos(e));
+      return;
+    }
+    if (S && S.tool === 'muovic' && S.drag) {
+      var dm = S.drag; S.drag = null;
+      if (dm.moved) { var gm = ingombro(dm.c.tipo); if (dm.c.y + gm.h > S.H) { S.H = dm.c.y + gm.h; ridim(); } S.baseOk = false; ridisegna(); }
+      return;
+    }
     if (S && S.tool === 'sel' && S.drag) {
       var g = S.drag; S.drag = null;
       if (g.mode === 'marq') {
@@ -9562,31 +9612,33 @@ var lavagna = (function () {
     ridisegna(true);
   }
   var IC_L = {
-    penna: '<path d="M4 20l1-4L16 5l3 3L8 19z"/><path d="M14 7l3 3"/>',
-    evid: '<path d="M9 18l-4 1 1-4 8-8 3 3z"/><path d="M14 5l3-2 4 4-2 3"/><path d="M4 21h16"/>',
-    gomma: '<path d="M8 20h12"/><path d="M5 15l8-9 6 5-6 7H8z"/><path d="M9 11l6 5"/>',
-    taglio: '<path d="M4 20L19 5"/><path d="M11 5h8v8"/>',
-    passaggio: '<path d="M4 20l3-3M10 14l3-3M16 8l3-3"/><path d="M12 5h7v7"/>',
-    palleggio: '<path d="M3 17c2-4 3 3 5-1s3 3 5-1 3 2 4-2"/><path d="M15 6h6v6"/>',
-    blocco: '<path d="M4 18L16 10"/><path d="M14 4l6 10"/>',
-    gioc: '<circle cx="12" cy="12" r="8"/><path d="M9 9h3v6"/>',
-    giocn: '<path d="M8 8h4v9"/><path d="M10 17h4"/>',
+    penna: '<path d="M17 3a2.8 2.8 0 014 4L7.500 20.500 2 22l1.500-5.500L17 3z"/><path d="M14.500 5.500l4 4"/>',
+    evid: '<path d="M14.500 3.500l6 6-8 8-3.500.5-2.500-2.500.5-3.500z"/><path d="M12 6l6 6"/><path d="M4 21h9" stroke-width="3.500" opacity=".55"/>',
+    gomma: '<path d="M7 21h13"/><path d="M5.500 13.500l7.500-7.500a2 2 0 012.800 0l3.200 3.200a2 2 0 010 2.800L12 19H8l-2.500-2.500a2 2 0 010-3z"/><path d="M9.500 9l6 6"/>',
+    taglio: '<path d="M3 12h16"/><path d="M13 6l6 6-6 6"/>',
+    passaggio: '<path d="M2.500 12h3M8.500 12h3M14.500 12h2"/><path d="M14 6l6 6-6 6"/>',
+    palleggio: '<path d="M2 12c2-4.500 3 4.500 5 0s3 4.500 5 0 2.500 2.500 3.500 0"/><path d="M15 6l6 6-6 6"/>',
+    blocco: '<path d="M3 12h14"/><path d="M19.500 5v14"/>',
+    gioc: '<circle cx="12" cy="12" r="9"/><text x="12" y="16.500" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor" stroke="none" font-family="Arial,sans-serif">1</text>',
+    giocn: '<text x="12" y="18" text-anchor="middle" font-size="19" font-weight="700" fill="currentColor" stroke="none" font-family="Arial,sans-serif">1</text>',
     dif: '<path d="M6 6l12 12M18 6L6 18"/>',
-    assist: '<circle cx="12" cy="12" r="8"/><path d="M8.500 16l3.500-8 3.500 8M9.800 13.500h4.400"/>',
-    assistn: '<path d="M6.500 18L12 6l5.500 12M8.600 14h6.800"/>',
-    cono: '<path d="M12 4l5 14H7z"/><path d="M4 20h16"/>',
-    testo: '<path d="M5 6V4h14v2M12 4v16M9 20h6"/>',
-    sel: '<path d="M6 4l12 7-5 1.500L11 18z"/>',
+    assist: '<circle cx="12" cy="12" r="9"/><text x="12" y="16.500" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor" stroke="none" font-family="Arial,sans-serif">A</text>',
+    assistn: '<text x="12" y="18" text-anchor="middle" font-size="19" font-weight="700" fill="currentColor" stroke="none" font-family="Arial,sans-serif">A</text>',
+    cono: '<path d="M12 3l6 15H6z"/><path d="M8.800 12h6.400"/><path d="M3 21h18"/>',
+    testo: '<path d="M5 6V4h14v2"/><path d="M12 4v16"/><path d="M9 20h6"/>',
+    sel: '<path d="M3 3l7 17 2.500-7.500L20 10z"/><path d="M13 13l6 6"/>',
+    muovic: '<path d="M12 2v20M2 12h20"/><path d="M8.500 5.500L12 2l3.500 3.500M8.500 18.500L12 22l3.500-3.500M5.500 8.500L2 12l3.500 3.500M18.500 8.500L22 12l-3.500 3.500"/>',
     mano: '<path d="M8 12V6a1.500 1.500 0 013 0v5M11 11V4.500a1.500 1.500 0 013 0V11M14 11V6a1.500 1.500 0 013 0v8c0 4-2 6-6 6-3 0-4-1.500-6-5l-1-2a1.500 1.500 0 012.500-1.500L8 14"/>',
-    campo: '<rect x="3" y="5" width="18" height="14"/><path d="M12 5v14"/><circle cx="12" cy="12" r="2.500"/>',
-    mezzo: '<path d="M5 5h14v14H5z"/><path d="M9 5v6h6V5"/><path d="M9 19a3 3 0 006 0"/>',
+    campo: '<rect x="2" y="5" width="20" height="14" rx="1"/><path d="M12 5v14"/><circle cx="12" cy="12" r="2.500"/><path d="M2 9.500h3.500v5H2M22 9.500h-3.500v5H22"/>',
+    mezzo: '<rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 3v6h6V3"/><path d="M8.500 21a3.500 3.500 0 017 0"/><circle cx="12" cy="5" r="1"/>',
     foglio: '<path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4M12 11v6M9 14h6"/>',
     dup: '<rect x="8" y="8" width="12" height="12"/><path d="M16 8V4H4v12h4"/>',
-    undo: '<path d="M9 7L4 12l5 5"/><path d="M4 12h10a6 6 0 010 8h-3"/>',
+    undo: '<path d="M3 7v6h6"/><path d="M3 13a9 9 0 103-7.700L3 8"/>',
     clear: '<path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13"/>',
     copia: '<rect x="8" y="8" width="12" height="12"/><path d="M16 8V4H4v12h4"/>',
     elim: '<path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13"/>',
     multi: '<rect x="4" y="4" width="8" height="8"/><rect x="12" y="12" width="8" height="8"/>',
+    intest: '<rect x="3" y="4" width="18" height="16" rx="1"/><path d="M3 9h18"/><circle cx="8" cy="14.500" r="2"/><path d="M13 13h5M13 16.500h4"/>',
     piu: '<path d="M12 5v14M5 12h14"/>', meno: '<path d="M5 12h14"/>',
     ok: '<path d="M5 12l5 5 9-10"/>'
   };
@@ -9597,10 +9649,10 @@ var lavagna = (function () {
   function top() {
     var z = Math.round((S.z || 1) * 100);
     return '<div class="lav-top"><button type="button" class="lb lb-i" data-lv="esci" aria-label="Chiudi la lavagna">' + icona('x') + '</button><div class="lav-tt"><b>Lavagna</b><small>Disegna allenamento</small></div>' +
-      '<button type="button" class="lb lb-i" data-lv="undo" aria-label="Annulla">' + icona('undo') + '</button><button type="button" class="lb lb-i" data-lv="clear" aria-label="Svuota il foglio">' + icona('clear') + '</button><button type="button" class="lb ok" data-lv="fatto">' + icona('ok', 18) + '<span>Fatto</span></button></div>';
+      '<button type="button" class="lb lb-i" data-lv="intest" aria-label="Intestazione del disegno: logo, staff e stagione" title="Intestazione">' + icona('intest') + '</button><button type="button" class="lb lb-i" data-lv="undo" aria-label="Annulla">' + icona('undo') + '</button><button type="button" class="lb lb-i" data-lv="clear" aria-label="Svuota il foglio">' + icona('clear') + '</button><button type="button" class="lb ok" data-lv="fatto">' + icona('ok', 18) + '<span>Fatto</span></button></div>';
   }
   function tb(k, t, extra, on, az, v) { return '<button type="button" class="lt' + (on ? ' on' : '') + '" data-lv="' + (az || 'tool') + '" data-v="' + (v || k) + '"' + (extra || '') + ' aria-pressed="' + (on ? 'true' : 'false') + '" title="' + t + '">' + icona(k, 24) + '<span>' + t + '</span></button>'; }
-  var CORTE = { 'Attacc. cerchiato': 'Att. (1)', 'Evidenziatore': 'Evid.', 'Passaggio': 'Pass.', 'Palleggio': 'Pall.', 'Attaccante': 'Att.', 'Difensore': 'Dif.', 'A cerchiata': 'A (c)', 'Mezzo campo': 'Mezzo', 'Scrivi testo': 'Testo', 'Seleziona': 'Selez.', 'Scorri': 'Mano' };
+  var CORTE = { 'Attacc. cerchiato': 'Att. (1)', 'Evidenziatore': 'Evid.', 'Passaggio': 'Pass.', 'Palleggio': 'Pall.', 'Attaccante': 'Att.', 'Difensore': 'Dif.', 'A cerchiata': 'A (c)', 'Mezzo campo': 'Mezzo', 'Scrivi testo': 'Testo', 'Seleziona': 'Selez.', 'Sposta campo': 'Sposta', 'Scorri': 'Mano' };
   function barra() {
     var h = '<div class="lav-dock"><div class="lrail" role="toolbar" aria-label="Strumenti">';
     GRUPPI.forEach(function (g, gi) {
@@ -9608,6 +9660,8 @@ var lavagna = (function () {
       g[1].forEach(function (t) { h += tb(t[0], CORTE[t[1]] || t[1], '', S.tool === t[0]); });
     });
     h += '</div><div class="lctx">';
+    if (S.place) h += '<div class="lhint"><span>' + (S.place === 'full' ? 'Tocca il foglio dove vuoi il campo' : 'Tocca il foglio dove vuoi il mezzo campo') + '</span><button type="button" class="lb" data-lv="placeauto">In fondo</button><button type="button" class="lb" data-lv="placeno">Annulla</button></div>';
+    if (S.tool === 'muovic') h += '<div class="lhint"><span>Trascina un campo: si porta dietro quello che c\'e sopra</span></div>';
     if (S.tool === 'sel' || S.sel.length) {
       h += '<div class="lgrp"><span class="lgl">Selezione ' + S.sel.length + '</span>' + tb('multi', 'Piu elementi', '', S.multi, 'multi', 'm') + tb('copia', 'Copia', S.sel.length ? '' : ' disabled', false, 'copiasel', 'c') + tb('elim', 'Elimina', S.sel.length ? '' : ' disabled', false, 'elimsel', 'e') + '</div>';
     }
@@ -9644,20 +9698,127 @@ var lavagna = (function () {
       bar.addEventListener('pointerup', function () { drag = null; }); bar.addEventListener('pointercancel', function () { drag = null; });
     }
   }
-  function aggiornaBarra() { var t = root.querySelector('.lav-dock'); if (t) t.outerHTML = barra(); setTimeout(barraScorri, 0); cv.style.touchAction = S.tool === 'mano' ? 'pan-y pinch-zoom' : 'none'; cv.style.cursor = S.tool === 'mano' ? 'grab' : (S.tool === 'gomma' ? 'cell' : S.tool === 'sel' ? 'default' : 'crosshair'); }
+  function aggiornaBarra() { var t = root.querySelector('.lav-dock'); if (t) t.outerHTML = barra(); setTimeout(barraScorri, 0); cv.style.touchAction = (S.tool === 'mano' || S.place) ? 'pan-y pinch-zoom' : 'none'; cv.style.cursor = S.place ? 'copy' : S.tool === 'muovic' ? 'move' : S.tool === 'mano' ? 'grab' : (S.tool === 'gomma' ? 'cell' : S.tool === 'sel' ? 'default' : 'crosshair'); }
   function tasti(e) { if (!S) return; if ((e.metaKey || e.ctrlKey) && (e.key === 'z' || e.key === 'Z')) { e.preventDefault(); annulla(); } }
   function chiudi() { document.removeEventListener('keydown', tasti); if (root && root.parentNode) root.parentNode.removeChild(root); root = null; S = null; document.documentElement.style.overflow = ''; }
+
+  /* ---- intestazione e pie di pagina del disegno: logo e staff in cima, Tagup in fondo ---- */
+  var HEAD_H = 190, FOOT_H = 110;
+  function chiaveSq() { return String((S && S.squadra) || st.serie || '').trim(); }
+  function intestDati() {
+    var k = chiaveSq().toLowerCase(), o = (st.lavInt && st.lavInt[k]) || {}, sc = {};
+    try { sc = socCorr(); } catch (x) { sc = {}; }
+    var stg = String(o.stagione || '').trim() || ('Stagione ' + stagione().replace(/\s+/g, ''));
+    if (!/stagione/i.test(stg)) stg = 'Stagione ' + stg;
+    return { nome: String(sc.completo || sc.nome || '').trim(), logo: sc.logo || '', squadra: chiaveSq(), capo: o.capo || '', assistenti: o.assistenti || '', preparatore: o.preparatore || '', stagione: stg };
+  }
+  function caricaIntest() {
+    var k = chiaveSq().toLowerCase();
+    if (!st.sessione || !k || (st.lavInt && st.lavInt[k] && st.lavInt[k]._ok)) return;
+    try {
+      chiama('intest_leggi', { token: st.sessione.token, squadra: chiaveSq() }).then(function (r) {
+        if (!r || !r.ok) return;
+        st.lavInt = st.lavInt || {};
+        var cur = st.lavInt[k] || {};
+        if (!cur._mod) st.lavInt[k] = { capo: r.capo || '', assistenti: r.assistenti || '', preparatore: r.preparatore || '', stagione: r.stagione || '', _ok: true };
+      }).catch(function () { /* ok */ });
+    } catch (x) { /* ok */ }
+  }
+  function chiediIntest() {
+    if (!root) return;
+    var vecchio = root.querySelector('.lav-txt'); if (vecchio) vecchio.remove();
+    var d0 = intestDati(), d = document.createElement('div'); d.className = 'lav-txt';
+    function campoI(id, et, val, ph) { return '<label class="lt-f"><span>' + et + '</span><input id="' + id + '" type="text" maxlength="120" value="' + esc(val) + '" placeholder="' + ph + '" autocomplete="off"></label>'; }
+    d.innerHTML = '<div class="lt-b"><b>Intestazione dei disegni</b><span style="font-size:13px;opacity:.7">Compare in cima a ogni disegno, insieme al logo della società. In fondo c\'è sempre il logo Tagup.</span>' +
+      campoI('liC', 'Capo allenatore', d0.capo, 'Nome e cognome') + campoI('liA', 'Assistenti', d0.assistenti, 'Separati da virgola') + campoI('liP', 'Preparatore', d0.preparatore, 'Nome e cognome') + campoI('liS', 'Stagione', d0.stagione.replace(/^Stagione\s*/i, ''), 'Per esempio 2026/27') +
+      '<div class="lt-a"><button type="button" class="lb" id="liX">Annulla</button><button type="button" class="lb on" id="liOk">Salva</button></div></div>';
+    root.appendChild(d);
+    d.querySelector('#liX').onclick = function () { d.remove(); };
+    d.querySelector('#liOk').onclick = function () {
+      var v = { capo: d.querySelector('#liC').value.trim(), assistenti: d.querySelector('#liA').value.trim(), preparatore: d.querySelector('#liP').value.trim(), stagione: d.querySelector('#liS').value.trim() };
+      d.remove();
+      var k = chiaveSq().toLowerCase(); st.lavInt = st.lavInt || {}; st.lavInt[k] = { capo: v.capo, assistenti: v.assistenti, preparatore: v.preparatore, stagione: v.stagione, _ok: true, _mod: true };
+      try { if (st.sessione) chiama('intest_salva', { token: st.sessione.token, squadra: chiaveSq(), capo: v.capo, assistenti: v.assistenti, preparatore: v.preparatore, stagione: v.stagione }).catch(function () { /* ok */ }); } catch (x) { /* ok */ }
+    };
+  }
+  function caricaImg(src, cross) {
+    return new Promise(function (ok) {
+      if (!src) return ok(null);
+      var im = new Image(), fatto = false, t = setTimeout(function () { if (!fatto) { fatto = true; ok(null); } }, 3500);
+      if (cross) im.crossOrigin = 'anonymous';
+      im.onload = function () { if (!fatto) { fatto = true; clearTimeout(t); ok(im); } };
+      im.onerror = function () { if (!fatto) { fatto = true; clearTimeout(t); ok(null); } };
+      im.src = src;
+    });
+  }
+  function adatta(c, testo, maxW, px, peso, fam) {
+    var f = px; c.font = peso + ' ' + f + 'px ' + fam;
+    while (f > 15 && c.measureText(testo).width > maxW) { f -= 1; c.font = peso + ' ' + f + 'px ' + fam; }
+    var t = testo; while (t.length > 3 && c.measureText(t).width > maxW) t = t.slice(0, -2);
+    return t === testo ? testo : t.replace(/\s+$/, '') + '...';
+  }
+  function disegnaImg(c, im, x, y, bw, bh) {
+    var iw = im.naturalWidth || im.width || bw, ih = im.naturalHeight || im.height || bh, r = Math.min(bw / iw, bh / ih), w = iw * r, h = ih * r;
+    c.drawImage(im, x + (bw - w) / 2, y + (bh - h) / 2, w, h);
+  }
+  function componi(imgSocieta, imgTagup) {
+    var d = intestDati(), out = document.createElement('canvas'); out.width = W; out.height = S.H + HEAD_H + FOOT_H;
+    var c = out.getContext('2d'), DISP = '"Tagup Display","Barlow Condensed",Impact,sans-serif', TEXT = '"Tagup Text","Hanken Grotesk",Arial,sans-serif';
+    c.fillStyle = '#ffffff'; c.fillRect(0, 0, W, out.height);
+    /* cima */
+    var x0 = 48;
+    if (imgSocieta) { disegnaImg(c, imgSocieta, x0, 30, 130, 130); x0 += 160; }
+    c.textBaseline = 'alphabetic'; c.fillStyle = '#0b0d10';
+    var nome = (d.nome || 'Società').toUpperCase(), stf = [];
+    c.font = '900 52px ' + DISP; var wMax = 640 - (x0 - 48);
+    c.fillText(adatta(c, nome, wMax, 52, '900', DISP), x0, 88);
+    c.fillStyle = '#4a4f57'; c.font = '600 28px ' + TEXT;
+    c.fillText(d.stagione + (d.squadra ? '  |  ' + d.squadra : ''), x0, 134);
+    if (d.capo) stf.push(['CAPO ALLENATORE', d.capo]);
+    if (d.assistenti) stf.push(['ASSISTENTI', d.assistenti]);
+    if (d.preparatore) stf.push(['PREPARATORE', d.preparatore]);
+    var sx = 800, rh = stf.length > 2 ? 46 : 56, sy = stf.length > 2 ? 52 : (stf.length > 1 ? 66 : 96);
+    stf.forEach(function (r, i) {
+      var y = sy + i * rh;
+      c.fillStyle = '#7a7f87'; c.font = '700 20px ' + TEXT; c.fillText(r[0], sx, y);
+      c.fillStyle = '#0b0d10'; var tx = adatta(c, r[1], W - 48 - (sx + 250), 30, '700', TEXT); c.fillText(tx, sx + 250, y);
+    });
+    c.fillStyle = '#0b0d10'; c.fillRect(0, HEAD_H - 8, W, 8); c.fillStyle = '#FBFF12'; c.fillRect(0, HEAD_H - 8, 220, 8);
+    /* disegno */
+    c.drawImage(cv, 0, HEAD_H);
+    /* fondo */
+    var fy = HEAD_H + S.H;
+    c.fillStyle = '#0b0d10'; c.fillRect(0, fy, W, FOOT_H);
+    var fx = 48;
+    if (imgTagup) { disegnaImg(c, imgTagup, fx, fy + 20, 70, 70); fx += 96; }
+    c.fillStyle = '#ffffff'; c.font = '900 40px ' + DISP; c.fillText('TAGUP', fx, fy + 54);
+    c.fillStyle = '#b9bec6'; c.font = '500 22px ' + TEXT; c.fillText('Disegnato con Grypho App  |  tagup.it  |  gestione@tagup.it', fx, fy + 88);
+    var dt = new Date(), ds = ('0' + dt.getDate()).slice(-2) + '/' + ('0' + (dt.getMonth() + 1)).slice(-2) + '/' + dt.getFullYear();
+    c.textAlign = 'right'; c.fillStyle = '#FBFF12'; c.font = '700 24px ' + TEXT; c.fillText(ds, W - 48, fy + 64); c.textAlign = 'left';
+    return out;
+  }
+  function esporta(fatto) {
+    if (S.bg) { var o1 = document.createElement('canvas'); o1.width = W; o1.height = S.H; o1.getContext('2d').drawImage(cv, 0, 0); return o1.toBlob(fatto, 'image/png'); }
+    var d = intestDati(), cross = /^https?:/i.test(d.logo);
+    Promise.all([caricaImg(d.logo, cross), caricaImg('logo-tagup.png', false)]).then(function (im) {
+      function tenta(imgS, imgT) { var o = componi(imgS, imgT); o.toBlob(fatto, 'image/png'); }
+      try { tenta(im[0], im[1]); } catch (x) { try { tenta(null, im[1]); } catch (x2) { try { tenta(null, null); } catch (x3) { var o2 = document.createElement('canvas'); o2.width = W; o2.height = S.H; o2.getContext('2d').drawImage(cv, 0, 0); o2.toBlob(fatto, 'image/png'); } } }
+    });
+  }
   function clic(e) {
     var b = e.target.closest('[data-lv]'); if (!b || !S) return;
     var a = b.getAttribute('data-lv'), v = b.getAttribute('data-v');
-    if (a === 'tool') { S.tool = v; S.drag = null; if (v !== 'sel') S.sel = []; ridisegna(); aggiornaBarra(); }
+    if (a === 'tool') { S.tool = v; S.drag = null; S.place = null; S.ghost = null; if (v !== 'sel') S.sel = []; ridisegna(); aggiornaBarra(); }
     else if (a === 'multi') { S.multi = !S.multi; aggiornaBarra(); }
     else if (a === 'copiasel') copiaSel();
     else if (a === 'elimsel') eliminaSel();
     else if (a === 'dupfoglio') duplicaFoglio();
     else if (a === 'col') { S.col = v; aggiornaBarra(); }
     else if (a === 'w') { S.w = Number(v); aggiornaBarra(); }
-    else if (a === 'full' || a === 'half') aggiungiCampo(a);
+    else if (a === 'full' || a === 'half') { S.place = a; S.ghost = null; S.pl = null; S.sel = []; aggiornaBarra(); }
+    else if (a === 'placeno') { S.place = null; S.ghost = null; S.pl = null; ridisegna(); aggiornaBarra(); }
+    else if (a === 'placeauto') { var tp = S.place; S.place = null; S.ghost = null; S.pl = null; aggiungiCampo(tp); aggiornaBarra(); }
+    else if (a === 'intest') chiediIntest();
     else if (a === 'pag') { salva(); S.H += PAG; ridim(); ridisegna(); }
     else if (a === 'undo') annulla();
     else if (a === 'clear') { if (S.items.length && window.confirm('Cancello tutto il foglio?')) { salva(); S.sel = []; S.items = []; S.H = PAG; ridim(); ridisegna(); } }
@@ -9665,15 +9826,13 @@ var lavagna = (function () {
     else if (a === 'fatto') {
       if (!S.items.length && !S.bg) { window.alert('Il foglio e vuoto.'); return; }
       S.sel = []; S.drag = null; ridisegna();
-      var out = document.createElement('canvas'); out.width = W; out.height = S.H; var oc = out.getContext('2d');
-      oc.drawImage(cv, 0, 0);
       var f2 = fine, stato = { items: S.items, H: S.H, nG: S.nG, nD: S.nD, conSfondo: !!S.bg };
-      out.toBlob(function (blob) { chiudi(); if (f2) f2(blob, stato); }, 'image/png');
+      esporta(function (blob) { chiudi(); if (f2) f2(blob, stato); });
     }
   }
-  function apri(cb, init) {
+  function apri(cb, init, opz) {
     if (root) return;
-    fine = cb; S = nuovo();
+    fine = cb; S = nuovo(); S.squadra = (opz && opz.squadra) || '';
     if (init && init.items) { S.items = init.items; S.H = init.H || PAG; S.nG = init.nG || 1; S.nD = init.nD || 1; }
     if (init && init.bg) {
       S.bg = { img: null, h: PAG }; var im = new Image();
@@ -9684,12 +9843,12 @@ var lavagna = (function () {
     root.innerHTML = top() + '<div class="lav-mid"><div class="lav-sc"><canvas id="lavC"></canvas></div><div class="lav-bar" aria-hidden="true"><div class="lav-th"></div></div></div>' + barra();
     document.body.appendChild(root); document.documentElement.style.overflow = 'hidden';
     cv = root.querySelector('#lavC'); cx = cv.getContext('2d'); ridim(); ridisegna(); barraScorri();
-    cv.style.touchAction = 'none'; cv.style.cursor = 'crosshair'; document.addEventListener('keydown', tasti);
+    cv.style.touchAction = 'none'; cv.style.cursor = 'crosshair'; document.addEventListener('keydown', tasti); caricaIntest();
     cv.addEventListener('pointerdown', giu); cv.addEventListener('pointermove', muovi); cv.addEventListener('pointerup', su); cv.addEventListener('pointercancel', su);
     root.addEventListener('click', clic);
     ['contextmenu', 'selectstart', 'dragstart', 'gesturestart'].forEach(function (n) { root.addEventListener(n, function (e) { e.preventDefault(); }); });
-    cv.addEventListener('touchstart', function (e) { if (S && S.tool !== 'mano') e.preventDefault(); }, { passive: false });
-    cv.addEventListener('touchmove', function (e) { if (S && S.tool !== 'mano') e.preventDefault(); }, { passive: false });
+    cv.addEventListener('touchstart', function (e) { if (S && S.tool !== 'mano' && !S.place) e.preventDefault(); }, { passive: false });
+    cv.addEventListener('touchmove', function (e) { if (S && S.tool !== 'mano' && !S.place) e.preventDefault(); }, { passive: false });
   }
   return { apri: apri };
 })();
@@ -10950,7 +11109,7 @@ function uDisegnaPlaybook(team, av) {
     if (!blob) { U().ov = o; disegna(); return; }
     var nome = team ? 'Playbook ' + gruppoU() + '.png' : 'Playbook cartaceo ' + av + '.png';
     caricaInvia(uFileDisegno(blob, nome), uCtxCarica(team ? { cat: 'playbook', titolo: gruppoU() } : { cat: 'avversario', avversario: av, tipo: 'playbook_cartaceo' }, team ? 'Playbook della squadra' : 'Playbook cartaceo ' + av));
-  });
+  }, null, { squadra: 'Under' });
 }
 
 /* ---------- lettura del calendario da file (CSV o Excel) ---------- */
@@ -11208,7 +11367,7 @@ function uAz(az, el, e) {
     lavagna.apri(function (blob) {
       if (!blob) { u.ov = salvato; disegna(); return; }
       uPianoInvia(salvato, uFileDisegno(blob, 'Piano allenamento ' + (salvato.f.data || '') + '.png'));
-    });
+    }, null, { squadra: 'Under' });
     return true;
   }
   if (az === 'u-piano-file') { uLeggiOv(); var sv = o; scegliFileApp('image/*,application/pdf', function (file) { u.ov = null; uPianoInvia(sv, file); }); return true; }
