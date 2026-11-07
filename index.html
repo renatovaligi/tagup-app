@@ -2017,6 +2017,12 @@ html .lav .lctx{padding:0 4px}
 .pr-card .lang-sw.pf-lang{margin:0;padding:12px 16px;justify-content:space-between;border-top:1px solid var(--line)}
 .pr-card .lang-sw.pf-lang .lang-l{margin:0}
 .lang-sw.pf-lang .lang-b{min-width:96px;min-height:44px}
+
+.pr-seg{flex:none;display:flex;gap:8px}
+.pr-seg .lang-b,.lang-sw.pf-lang .lang-b{width:104px;min-height:44px;padding:0}
+.pr-card .lang-sw.pf-lang .lang-l{font:800 17px/1.1 var(--display);letter-spacing:.04em;color:var(--txt)}
+.pr-card .lang-sw.pf-lang{gap:8px 8px}
+.pr-card .lang-sw.pf-lang .lang-b:first-of-type{margin-left:auto}
 @media (min-width:1024px){.pf-a .me{padding:32px 24px}.pf-a .av.big{width:120px;height:120px;font-size:48px}}
 @media (prefers-reduced-motion:reduce){.lang-b{transition:none}.lang-b:active{transform:none}}
 </style>
@@ -2773,7 +2779,9 @@ function giochiAuto() { try { return localStorage.getItem('tg_giochi_auto') !== 
 function prRiga(id, titolo, desc, acceso, azOn, azOff, nota) {
   var az = acceso ? azOff : azOn;
   return '<div class="pr-row"><div class="pr-t" id="' + id + '"><b>' + titolo + '</b><small>' + desc + '</small></div>' +
-    '<button type="button" class="tgl' + (acceso ? ' on' : '') + '" role="switch" aria-checked="' + (acceso ? 'true' : 'false') + '" aria-labelledby="' + id + '"' + (az ? ' data-az="' + az + '"' : '') + '><i></i><span>' + (acceso ? 'Sì' : 'No') + '</span></button></div>' +
+    '<div class="pr-seg" role="group" aria-labelledby="' + id + '">' +
+    '<button type="button" class="lang-b' + (acceso ? ' on' : '') + '" aria-pressed="' + (acceso ? 'true' : 'false') + '"' + (!acceso && azOn ? ' data-az="' + azOn + '"' : '') + (!acceso && !azOn ? '' : '') + '>Sì</button>' +
+    '<button type="button" class="lang-b' + (acceso ? '' : ' on') + '" aria-pressed="' + (acceso ? 'false' : 'true') + '"' + (acceso && azOff ? ' data-az="' + azOff + '"' : '') + '>No</button></div></div>' +
     (nota ? '<div class="pr-n">' + nota + '</div>' : '');
 }
 function htmlGiochiAuto() {
