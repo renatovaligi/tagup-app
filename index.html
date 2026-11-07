@@ -1155,6 +1155,7 @@ input,select,textarea{font-size:16px}
 input[type=text],input[type=search],input[type=email],input[type=password],select,textarea{border-radius:4px;border:1px solid rgba(244,241,234,.26);background:rgba(var(--deepc),.6);color:var(--txt);padding:16px 16px;min-height:48px;box-sizing:border-box}
 input::placeholder,textarea::placeholder{color:rgba(244,241,234,.66)}
 input:focus,select:focus,textarea:focus{border-color:var(--yel)}
+select{-webkit-appearance:none;appearance:none;padding-right:46px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1.5l6 6 6-6' fill='none' stroke='%23f4f1ea' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 18px center;background-size:14px 9px}
 @media (min-width:900px){.screen{max-width:1080px}}
 /* iPad in verticale: colonna piu larga e schede affiancate */
 @media (min-width:700px) and (max-width:1023px){#app{max-width:780px}.screen{max-width:none;padding-left:32px;padding-right:32px}.kpi{grid-template-columns:repeat(3,minmax(0,1fr))}.pf-g{margin-top:24px}}
@@ -2000,6 +2001,7 @@ html .lav .lctx{padding:0 4px}
 .lang-b.on{background:var(--acc);border-color:var(--acc);color:#0b0d10}
 .lang-b:focus-visible{outline:3px solid #fff;outline-offset:2px}
 .lang-sw.lg-login{justify-content:flex-start;margin:0 0 8px}
+.lang-sw.lg-login{gap:6px;margin:6px 0 12px;clear:both}.lang-sw.lg-login .lang-l{display:none}.lang-sw.lg-login .lang-b{min-height:30px;padding:0 10px;font-size:11px;letter-spacing:.08em;border-color:rgba(244,241,234,.22);color:var(--muted)}.lang-sw.lg-login .lang-b.on{color:#0b0d10}
 
 /* PROFILO v4: scheda in cima, tutto allineato e centrato */
 .pf-a .me,.me{flex-direction:column;align-items:center;text-align:center;gap:12px;padding:24px 16px}
@@ -4950,7 +4952,7 @@ var _temaK = '';
 function applicaTema() {
   try {
     var sc = socCorr(), el = document.getElementById('socstyle');
-    if (!eGrypho() && ctxSenior()) sc = Object.assign({}, sc, GRY_TEMA);   // nella parte senior i colori sono quelli di Grypho
+    if (!eGrypho() && /perugia/i.test(sc.completo || sc.nome) && ctxSenior()) sc = Object.assign({}, sc, GRY_TEMA);   // nella parte senior i colori sono quelli di Grypho
     var spegni = function () { if (el) el.textContent = ''; var tc = document.querySelector('meta[name="theme-color"]'); if (tc) tc.setAttribute('content', '#0b0d10'); };
     if (!sc.nome) { spegni(); return; }
     var c1 = sc.c1, c2 = sc.c2, c3 = sc.c3;
@@ -4965,6 +4967,7 @@ function applicaTema() {
         });
       }
     }
+    if (!c1 && !eGrypho()) { c1 = '#FF5A1F'; c2 = c2 || '#FF5A1F'; }   // societa senza colori propri: arancio Tagup
     if (!c1) { spegni(); return; }
     c1 = leggibile(c1); c2 = leggibile(c2 || c1);
     var rgb = function (h) { return _hex2rgb(h).join(','); };
