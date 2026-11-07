@@ -257,7 +257,19 @@ input,select,textarea,.md input{border-radius:0}
 @media (prefers-reduced-motion:reduce){#boot .bl{animation:none}}
 /* jarvis v2 */#boot .jr{fill:none;stroke:#ff5a1f;stroke-width:1.5;transform-origin:200px 200px}#boot .j1{stroke-dasharray:1131;stroke-dashoffset:1131;animation:jvd 1.1s .05s ease-out forwards}#boot .j2{stroke-dasharray:6 10;opacity:.6;animation:jvspin 9s linear infinite}#boot .j3{stroke-width:2;opacity:0;animation:jvpulse .9s 1.15s ease-out forwards}#boot .j4{stroke-width:4;stroke-dasharray:1;stroke-dashoffset:1;animation:jvd 1s .15s cubic-bezier(.4,.1,.2,1) forwards}#boot .j5{stroke-width:2.5;stroke-dasharray:1;stroke-dashoffset:1;animation:jvd .8s .5s cubic-bezier(.4,.1,.2,1) forwards}#boot .js{stroke-width:2.5;stroke-dasharray:1;stroke-dashoffset:1;animation:jvd .9s .35s cubic-bezier(.4,.1,.2,1) forwards}#boot .jfl{fill:#ff5a1f;stroke:none;opacity:0;animation:jvfl .6s .9s ease-out forwards}#boot .jdc{fill:#0b0d10;stroke:none}#boot .lp{fill:rgba(255,90,31,0);stroke:#ff5a1f;stroke-width:4;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:jvd 1.1s .55s cubic-bezier(.4,.1,.2,1) forwards,jvlf .45s 1.4s ease-out forwards}@keyframes jvd{to{stroke-dashoffset:0}}@keyframes jvspin{to{transform:rotate(360deg)}}@keyframes jvpulse{0%{opacity:.9;transform:scale(.8)}100%{opacity:0;transform:scale(1.4)}}@keyframes jvfl{to{opacity:.16}}@keyframes jvlf{to{fill:rgba(244,241,234,.95);stroke:rgba(244,241,234,.95)}}@media (prefers-reduced-motion:reduce){#boot *{animation:none!important}#boot .jr{stroke-dashoffset:0}}
 /* jarvis v3 radar */#boot .rrg{fill:none;stroke:#ff5a1f;stroke-width:1;opacity:.5}#boot .rtk{stroke:#ff5a1f;stroke-width:2;opacity:0;animation:jvo .6s .2s forwards}#boot .rsw{transform-origin:200px 200px;animation:jvspin 1.6s .1s linear 2}#boot .rbl{fill:none;stroke:#ff5a1f;stroke-width:3;opacity:0;animation:jvo .3s .5s forwards}#boot .rsm{fill:none;stroke:#ff5a1f;stroke-width:1.8;opacity:0;animation:jvo .3s .8s forwards}#boot .lp{fill:rgba(255,90,31,0);stroke:#ff5a1f;stroke-width:4;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:jvd 1s .9s forwards,jvlf .4s 1.8s forwards}@keyframes jvo{to{opacity:1}}@media (prefers-reduced-motion:reduce){#boot *{animation:none!important}#boot .lp{stroke-dashoffset:0}}
+
+/* barra di caricamento (come nell'app) */
+#tgbar{position:fixed;left:0;right:0;top:0;height:4px;z-index:80;background:rgba(243,243,241,.12);overflow:hidden}
+#tgbar i,.carico .prog i{display:block;height:100%;width:40%;background:#ff5a1f;animation:tgbar 1.2s ease-in-out infinite}
+.carico .prog{height:4px;background:rgba(243,243,241,.12);margin:0 auto 14px;max-width:320px;overflow:hidden}
+@keyframes tgbar{0%{transform:translateX(-100%)}100%{transform:translateX(260%)}}
+@media (prefers-reduced-motion:reduce){#tgbar i,.carico .prog i{animation:none;width:100%;opacity:.6}}
+/* il piede non deve restringersi ne restare a meta schermo: segue il contenuto */
+#app.wrap>*{flex-shrink:0}
+#app.wrap{min-height:100vh;min-height:100dvh;height:auto}
+header>img{object-fit:contain;overflow:visible}
 </style>
+<script src="i18n-dict.js"></script><script src="i18n-engine.js"></script>
 </head>
 <body>
 <div id="fx" aria-hidden="true"></div>
@@ -348,17 +360,19 @@ function tgJv(o){
 /* apertura della dashboard: stesso Jarvis dell'app. Parte da solo se il browser lo consente, altrimenti al primo tocco o clic; dopo il login parte subito */
 (function(){
   var boot=document.getElementById('boot');if(!boot)return;
-  var J=tgJv({snd:'orologio',el:boot,dur:4200,outMs:800});
+  var J=tgJv({snd:'orologio',el:boot,dur:30000,outMs:800});
   var sk=document.getElementById('skipBoot');if(sk)sk.onclick=function(e){e.stopPropagation();J.chiudi()};
-  window.tagupBoot=function(subito){
-    try{
-      if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-      if(!subito&&sessionStorage.getItem('tagup_boot'))return;
-      sessionStorage.setItem('tagup_boot','1');
-    }catch(e){}
-    if(subito)J.parti();else J.auto();
+  var tIni=0;
+  window.tagupBoot=function(){
+    try{if(matchMedia('(prefers-reduced-motion: reduce)').matches)return}catch(e){}
+    tIni=Date.now();J.parti();
   };
-  try{window.tagupBoot()}catch(eB0){}
+  /* chiusura: appena i dati sono pronti (almeno 1,6 secondi, cosi l'animazione si legge) */
+  window.tagupBootFine=function(){
+    if(!tIni){return}
+    var resto=Math.max(0,1600-(Date.now()-tIni));tIni=0;
+    setTimeout(function(){J.chiudi()},resto);
+  };
 })();
 </script>
 
@@ -406,14 +420,21 @@ function tgJv(o){
     };
   }
   function esci() { tok = ''; D = null; try { sessionStorage.removeItem('tagup_dash'); } catch (e) { /* ok */ } vistaLogin(); }
+  function barra(on) {
+    var b = document.getElementById('tgbar');
+    if (on && !b) { b = document.createElement('div'); b.id = 'tgbar'; b.setAttribute('role', 'progressbar'); b.setAttribute('aria-label', 'Caricamento'); b.innerHTML = '<i></i>'; document.body.appendChild(b); }
+    else if (!on && b) b.remove();
+  }
   function carica() {
-    stato = 'carico'; disegna();
+    var primo = !D;
+    stato = 'carico'; barra(true); disegna();
+    if (primo) { try { window.tagupBoot && window.tagupBoot(); } catch (eB) { /* ok */ } }
     api('dashboard_dati', { token: tok }).then(function (r) {
-      stato = '';
+      stato = ''; barra(false);
+      try { window.tagupBootFine && window.tagupBootFine(); } catch (eF) { /* ok */ }
       if (r && r.sessione === false) { errore = 'Sessione scaduta, accedi di nuovo.'; return esci(); }
       if (!r || !r.ok) { errore = (r && r.errore) || 'Dati non disponibili.'; if (/riservata/.test(errore)) return esci(); D = null; return disegna(); }
       D = r; disegna();
-      try { window.tagupBoot && window.tagupBoot(true); } catch (eB) { /* ok */ }
     });
   }
 
@@ -657,7 +678,7 @@ function tgJv(o){
     if (r) r.onclick = function () { LAY = { order: [], w: {} }; salvaLay(); disegna(); };
   }
   function disegna() {
-    if (stato === 'carico' && !D) { app.innerHTML = head() + '<div class="carico">Carico i dati...</div>' + pie(); bindHead(); return; }
+    if (stato === 'carico' && !D) { app.innerHTML = head() + '<div class="carico"><div class="prog" aria-hidden="true"><i></i></div>Carico i dati...</div>' + pie(); bindHead(); return; }
     if (!D) { app.innerHTML = head() + '<div class="vuoto">' + esc(errore || 'Nessun dato.') + '</div>' + pie(); bindHead(); return; }
     var L = riquadri().filter(function (x) { return x.sez === SEZ; }), pos = {}; LAY.order.forEach(function (id, i) { pos[id] = i; });
     L.forEach(function (x, i) { x._o = pos[x.id] !== undefined ? pos[x.id] : 1000 + i; }); L.sort(function (a, b) { return a._o - b._o; });
