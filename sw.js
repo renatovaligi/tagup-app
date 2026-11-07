@@ -1,7 +1,7 @@
 // Service worker: salva i file dell'app per aprirla anche con poca copertura.
 // I dati (allenamenti, scouting) non passano da qui: li gestisce l'app.
 try { if (typeof Notification !== 'undefined' && Notification.permission === 'granted') importScripts('https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.sw.js'); } catch (e) { /* senza rete: le notifiche tornano alla prossima attivazione */ }
-const VERSIONE = 'grypho-v332';
+const VERSIONE = 'grypho-v333';
 const FILE = [
   './', 'index.html', 'i18n-dict.js', 'i18n-engine.js', 'tagging.html', 'tagging-under.html', 'config.js', 'manifest.webmanifest', 'logo.svg', 'logo-perugia.png', 'logo-tagup.svg', 'logo-tagup-bianco.svg', 'logo-tagup.png', 'logo-completo.svg', 'icon-192.png', 'icon-512.png',
   'fonts/hanken-grotesk-latin-400-normal.woff2', 'fonts/hanken-grotesk-latin-500-normal.woff2', 'fonts/hanken-grotesk-latin-600-normal.woff2',

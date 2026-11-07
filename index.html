@@ -2000,6 +2000,24 @@ html .lav .lctx{padding:0 4px}
 .lang-b.on{background:var(--acc);border-color:var(--acc);color:#0b0d10}
 .lang-b:focus-visible{outline:3px solid #fff;outline-offset:2px}
 .lang-sw.lg-login{justify-content:flex-start;margin:0 0 8px}
+
+/* PROFILO v4: scheda in cima, tutto allineato e centrato */
+.pf-a .me,.me{flex-direction:column;align-items:center;text-align:center;gap:12px;padding:24px 16px}
+.me>div:last-child{display:flex;flex-direction:column;align-items:center;gap:0;width:100%}
+.me-n{margin-bottom:8px}
+.me .badge{margin:0 auto 4px}
+.me .fotobtn{margin:8px 8px 0}
+.me .fotobtn.rim{margin-left:8px}
+.pf-a .fotonota,.fotonota{max-width:34ch;margin:12px auto 0;text-align:center}
+.pf-a .av.big,.av.big{width:92px;height:92px;font-size:38px;margin:0 auto}
+.pf-g0{margin-top:24px}
+.pf-a .pf-top{grid-template-columns:1fr;margin:0 0 8px}
+.pf-top .btn{min-height:56px;justify-content:center;text-align:center}
+.pf-top .pf-t{display:flex;flex-direction:column;align-items:center;gap:2px}
+.pr-card .lang-sw.pf-lang{margin:0;padding:12px 16px;justify-content:space-between;border-top:1px solid var(--line)}
+.pr-card .lang-sw.pf-lang .lang-l{margin:0}
+.lang-sw.pf-lang .lang-b{min-width:96px;min-height:44px}
+@media (min-width:1024px){.pf-a .me{padding:32px 24px}.pf-a .av.big{width:120px;height:120px;font-size:48px}}
 @media (prefers-reduced-motion:reduce){.lang-b{transition:none}.lang-b:active{transform:none}}
 </style>
 <script src="i18n-dict.js"></script><script src="i18n-engine.js"></script>
@@ -6547,19 +6565,20 @@ function vistaProfilo() {
   var iniziale = (s.nome || '?').trim().charAt(0).toUpperCase();
   var standalone = (window.matchMedia && matchMedia('(display-mode: standalone)').matches) || navigator.standalone;
   return barraAlta() + '<div class="head"><div><div class="eyebrow">Account</div><h1>Profilo</h1></div></div>' +
-    '<div class="pf-top" role="group" aria-label="Dati e app">' +
-    '<button class="btn" data-az="aggiorna">' + IC.refresh + 'Aggiorna i dati</button>' +
-    '<button class="btn ghost" data-az="aggiornaapp">' + IC.ricarica + '<span class="pf-t">Ricarica l\'app<small>Forza l\'aggiornamento all\'ultima versione</small></span></button>' +
-    '</div>' + (window.tgLangHtml ? tgLangHtml() : '') +
     '<div class="pf"><div class="pf-a"><div class="me"><div class="av big">' + (st.fotoMia ? '<img src="' + st.fotoMia + '" alt="">' : esc(iniziale)) + '</div><div><div class="me-n">' + esc(s.nome) + '</div>' +
     '<span class="badge' + (s.ruolo === 'staff' ? '' : ' soft') + '">' + esc(etichettaPf(s)) + '</span><br>' +
     '<label class="fotobtn" for="inFoto">' + (st.fotoMia ? 'Cambia foto' : 'Carica foto') + '</label><input type="file" id="inFoto" accept="image/*" hidden>' +
     (st.fotoMia ? '<button class="fotobtn rim" data-az="rimuovifoto" style="background:none;border-top:0;border-left:0;border-right:0;font-family:inherit">Rimuovi</button>' : '') +
     (st.fotoStato ? msgFoto(st.fotoStato) : '') +
     '<div class="fotonota">La foto è facoltativa. Se sei maggiorenne la vedono tutti gli utenti iscritti all\'app, se sei minorenne solo lo staff.</div></div></div>' +
+    '<div class="pf-g pf-g0">Dati e app</div>' +
+    '<div class="pf-top" role="group" aria-label="Dati e app">' +
+    '<button class="btn" data-az="aggiorna">' + IC.refresh + 'Aggiorna i dati</button>' +
+    '<button class="btn ghost" data-az="aggiornaapp">' + IC.ricarica + '<span class="pf-t">Ricarica l\'app<small>Forza l\'aggiornamento all\'ultima versione</small></span></button>' +
+    '</div>' +
     (standalone ? '' :
       '<div class="tip pf-tip"><b>Installa l\'app sul telefono</b><br>iPhone: apri la pagina in Safari, tocca Condividi e poi "Aggiungi alla schermata Home". Android: menu del browser e poi "Installa app".</div>') +
-    '<div class="pf-g">Preferenze</div><div class="pr-card">' + htmlPush() + htmlGiochiAuto() + '</div>' + htmlRichiesteU() +
+    '<div class="pf-g">Preferenze</div><div class="pr-card">' + htmlPush() + htmlGiochiAuto() + (window.tgLangHtml ? tgLangHtml('pf-lang') : '') + '</div>' + htmlRichiesteU() +
     '<div class="pf-g">Aiuto e account</div>' +
     '<button class="btn ghost" data-az="guida">' + IC.aiuto + 'Come funziona l\'app</button>' +
     '<button class="btn ghost" data-az="infotagup">' + IC.aiuto + 'Info su Tagup</button>' +
@@ -6573,7 +6592,7 @@ function vistaProfilo() {
     htmlPubbProfilo() +
     '<button class="btn ghost" data-az="segnmenu" aria-expanded="' + !!st.segnMenu + '">' + IC.bandiera + 'Segnalazioni' + (st.dati && st.dati.utente && st.dati.utente.segn && !st.segnMenu ? ' (' + st.dati.utente.segn + ' da leggere)' : '') + '</button>' +
     (st.segnMenu ? '<div class="vcm"><button class="btn ghost" data-az="segnala">Invia una segnalazione</button>' + (st.dati && st.dati.utente && st.dati.utente.cronologia ? '<button class="btn ghost' + (st.dati.utente.segn ? ' sgn-nuovo' : '') + '" data-az="segnlista">Segnalazioni ricevute' + (st.dati.utente.segn ? ' (' + st.dati.utente.segn + ' da leggere)' : '') + '</button>' : '') + '</div>' : '') +
-    ((htmlUtentiProfilo() + htmlVisite24()) ? '<div class="pf-g">Numeri</div>' + htmlUtentiProfilo() + htmlVisite24() : '') +
+    (htmlUtentiProfilo() + htmlVisite24()) +
     '</div></div>' +
     piede();
 }
