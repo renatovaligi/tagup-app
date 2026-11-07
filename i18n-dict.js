@@ -1,10 +1,15 @@
 /* Tagup: frasi dell'app in inglese. Chiave: testo italiano esatto. Le frasi non elencate restano in italiano. */
 window.TG_EN = {
+"Servono i consensi del genitore":"The parent's consents are needed",
+"Perché sei minorenne, un genitore deve leggere l'informativa privacy e dare i consensi, anche per foto e video. Si fa online in due minuti: gli mandiamo per email un link personale e un codice di conferma. Se preferisce la carta, dalla stessa pagina può stampare o salvare in PDF una copia del modulo.":"Because you are a minor, a parent must read the privacy notice and give consent, including for photos and video. It takes two minutes online: we email a personal link and a confirmation code. If they prefer paper, they can print or save a copy of the form as a PDF from the same page.",
+"Puoi chiudere questa finestra e farlo dopo: ricomparirà ogni volta che riapri l'app, finché i consensi non sono registrati.":"You can close this window and do it later: it will come back every time you open the app, until the consents are recorded.",
+"Stampa o salva una copia":"Print or save a copy",
+"Preferisci la carta? Stampa o salva il modulo":"Prefer paper? Print or save the form",
 'Consensi del genitore.':'Parent consent.',
 'Invia il link al genitore':'Send the link to the parent',
 'Ricevi il codice per email':'Get the code by email',
 'Conferma i consensi':'Confirm consents',
-"Privacy: i consensi valgono per una stagione e vanno confermati ogni 1 luglio. Nel Profilo puoi cancellare il tuo account. Le password nuove devono avere lettere e numeri. Per lo staff: la società accetta una dichiarazione per condividere i video. I genitori dei minorenni possono dare i consensi online.":"Privacy: consents are valid for one season and must be confirmed again every 1 July. In your Profile you can delete your account. New passwords must contain letters and numbers. For staff: the club accepts a declaration before sharing videos. Parents of minors can give consent online.",
+"Privacy: i consensi valgono per una stagione e vanno confermati ogni 1 luglio. Nel Profilo puoi cancellare il tuo account. Le password nuove devono avere lettere e numeri. Per lo staff: la società accetta una dichiarazione per condividere i video. I genitori dei minorenni possono dare i consensi online, anche per la comunicazione della società, e li rinnovano ogni stagione.":"Privacy: consents are valid for one season and must be confirmed again every 1 July. In your Profile you can delete your account. New passwords must contain letters and numbers. For staff: the club accepts a declaration before sharing videos. Parents of minors can give consent online, including for club communication, and renew it every season.",
   'Cancella il mio account': 'Delete my account',
   'Cancellazione in corso...': 'Deleting...',
   'Il tuo account è stato cancellato.': 'Your account has been deleted.',
