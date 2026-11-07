@@ -2025,6 +2025,9 @@ html .lav .lctx{padding:0 4px}
 .pr-card .lang-sw.pf-lang .lang-l{font:800 17px/1.1 var(--display);letter-spacing:.04em;color:var(--txt)}
 .pr-card .lang-sw.pf-lang{gap:8px 8px}
 .pr-card .lang-sw.pf-lang .lang-b:first-of-type{margin-left:auto}
+/* profilo: una sola colonna centrata per ogni tipo di utente (niente colonna vuota) */
+.pf,.pf-a,.pf-b{display:block;max-width:680px;margin-left:auto;margin-right:auto;grid-column:auto}
+.pf-b:empty{display:none}
 @media (min-width:1024px){.pf-a .me{padding:32px 24px}.pf-a .av.big{width:120px;height:120px;font-size:48px}}
 @media (prefers-reduced-motion:reduce){.lang-b{transition:none}.lang-b:active{transform:none}}
 </style>
@@ -4834,7 +4837,7 @@ function chiudiReport() {
 /** Nome e logo della società che ha la licenza (arrivano dal foglio Societa). Prima del login, o se mancano, vale Grypho. */
 function socCorr() {
   var u = st.dati && st.dati.utente, a = (u && u.soc && u.soc.nome) ? u.soc : (st.sessione && st.sessione.soc && st.sessione.soc.nome ? st.sessione.soc : null);
-  return { nome: a ? a.nome : '', completo: a ? (a.completo || a.nome) : '', logo: a && a.logo ? a.logo : '', icona: a && a.icona ? a.icona : '', c1: a && a.c1 ? a.c1 : '', c2: a && a.c2 ? a.c2 : '', c3: a && a.c3 ? a.c3 : '' };
+  return { nome: a ? a.nome : '', completo: a ? (a.completo || a.nome) : '', logo: a && a.logo ? a.logo : '', icona: a && a.icona ? a.icona : '', c1: a && a.c1 ? a.c1 : '', c2: a && a.c2 ? a.c2 : '', c3: a && a.c3 ? a.c3 : '', squadre: (a && a.squadre) ? a.squadre : [] };
 }
 function htmlSocColl() {
   if (!st.socCollAperta) return '';
@@ -4945,6 +4948,9 @@ var GRY_TEMA = { c1: '#FBFF12', c2: '#FF2929' };
 function _lum(h) { var c = _hex2rgb(h).map(function (v) { v /= 255; return v <= .03928 ? v / 12.92 : Math.pow((v + .055) / 1.055, 2.4); }); return .2126 * c[0] + .7152 * c[1] + .0722 * c[2]; }
 function leggibile(h) { try { var n = 0, q = _rgb2hsl.apply(null, _hex2rgb(h)); while ((_lum(h) + .05) / (.0035 + .05) < 4.5 && n++ < 40) { q[2] = Math.min(q[2] + .025, .95); h = _hsl2hex(q[0], q[1], q[2]); } } catch (e) { /* ok */ } return h; }
 /** Vero se l'utente appartiene al progetto Grypho (o non ha ancora una societa). */
+/** Societa esterna a Grypho e Perugia Basket (es. una squadra appena creata): app semplificata, con impegni e roster dei suoi file. */
+function eClub() { var sc = socCorr(); return !!sc.nome && !/grypho|perugia/i.test(sc.completo || sc.nome); }
+function clubSquadre() { var l = socCorr().squadre || []; return l.length ? l : ['Prima squadra']; }
 function eGrypho() { var sc = socCorr(); return !sc.nome || /grypho/i.test(sc.completo || sc.nome); }
 /** Vero nella parte senior (Senior, Serie B e C con i loro menu). */
 function ctxSenior() { return st.tab === 'senior' || (!!st.serie && ['hub', 'scouting', 'avversari', 'roster', 'calendario', 'video', 'campionato'].indexOf(st.tab) >= 0); }
@@ -5393,7 +5399,7 @@ function vistaSettimana() {
     }).join('');
   }
   var attive = ['B', 'C'].filter(function (s) { return !st.serieOff[s]; });
-  var giocatore = st.sessione && st.sessione.ruolo === 'giocatore', uf = eUF(), osp = !!st.sessione && st.sessione.ruolo === 'ospite' && !st.sessione.tipo;
+  var giocatore = st.sessione && st.sessione.ruolo === 'giocatore', club = eClub(), uf = eUF() || club, osp = !!st.sessione && st.sessione.ruolo === 'ospite' && !st.sessione.tipo;
   var eUnder = giocatore && ((d.roster || []).some(function (g) { return g.squadra === 'Under' && chiaveNome(g.nome) === chiaveNome(st.sessione.nome); }) || tutti.some(function (a) { return a.mio && a.mio.tipo === 'aggregato'; }));
   var under = eUnder && !!st.soloUnder;
   var tasti = uf ? '' : '<div class="serie-btns' + (giocatore ? ' con-miei' : '') + '">' + ['B', 'C'].map(function (s) {
@@ -5413,7 +5419,7 @@ function vistaSettimana() {
   // tre finestre: settimana passata, corrente e prossima (da lunedi a domenica)
   var lun0 = new Date(); lun0 = new Date(lun0.getFullYear(), lun0.getMonth(), lun0.getDate()); lun0.setDate(lun0.getDate() - ((lun0.getDay() + 6) % 7));
   function fd(d) { return d.toLocaleDateString('it-IT', { day: 'numeric', month: 'short' }); }
-  var fo = st.finOpen || {}, multi = uf || osp || attive.length > 1 || (!attive.length && under);
+  var fo = st.finOpen || {}, multi = (uf && !club) || osp || attive.length > 1 || (!attive.length && under);
   var html = [['passata', 'Settimana passata', -1], ['corrente', 'Settimana corrente', 0], ['prossima', 'Settimana prossima', 1]].map(function (w) {
     var da = new Date(lun0); da.setDate(da.getDate() + 7 * w[2]);
     var aa = new Date(da); aa.setDate(aa.getDate() + 6);
@@ -6414,8 +6420,10 @@ function vistaRoster() {
   if (st.sessione && Date.now() - (st.onlineT || 0) > 25000) { st.onlineT = Date.now(); chiama('ping', { token: st.sessione.token }).then(ricevuteChat); }
   var d = st.dati;
   var h = intestazione('Roster', 'Le squadre');
-  var sq = st.rosterSq;
-  var tasti = '<div class="serie-btns ros-btns">' + [[st.serie || 'Serie C', (st.serie === 'Serie B' ? 'B' : 'C')], ['Under', 'U']].map(function (x) {
+  var sq = st.rosterSq, club = eClub();
+  var lsq = club ? clubSquadre().map(function (x) { return [x, 'X']; }) : [[st.serie || 'Serie C', (st.serie === 'Serie B' ? 'B' : 'C')], ['Under', 'U']];
+  if (club && !lsq.some(function (x) { return x[0] === sq; })) sq = st.rosterSq = lsq[0][0];
+  var tasti = '<div class="serie-btns ros-btns">' + lsq.map(function (x) {
     var on = sq === x[0];
     return '<button class="serie-btn' + (on ? ' on' : '') + '" data-az="rostersq" data-sq="' + x[0] + '" data-serie="' + x[1] + '" aria-pressed="' + on + '">' + x[0] + '</button>';
   }).join('') + '</div>';
@@ -7751,7 +7759,7 @@ function barra() {
     return '<button class="tab' + (on ? ' on' : '') + '" data-az="serie" data-serie-nome="' + serie + '">' + IC.team + '<span>' + serie + '</span></button>';
   }
   var onSenior = st.tab === 'senior' || (!!st.serie && ['hub', 'scouting', 'avversari', 'roster', 'calendario', 'video', 'campionato'].indexOf(st.tab) >= 0), onU = st.tab === 'ugrp' || st.tab === 'under';
-  var navSerie = eUF() ? '<button class="tab' + (onSenior ? ' on' : '') + '" data-az="u-senior">' + IC.team + '<span>Senior</span></button><button class="tab' + (onU ? ' on' : '') + '" data-az="u-apri">' + IC.target + '<span>Under</span></button>' : ts('Serie B') + ts('Serie C') + (st.sessione && ((st.sessione.ruolo === 'ospite' && !st.sessione.tipo) || uStaffExtra() || (st.sessione.ruolo === 'staff' && !st.sessione.tipo)) ? '<button class="tab' + (onU ? ' on' : '') + '" data-az="u-apri">' + IC.target + '<span>Under</span></button>' : '');
+  var navSerie = eClub() ? t('roster', 'Roster', IC.team) : eUF() ? '<button class="tab' + (onSenior ? ' on' : '') + '" data-az="u-senior">' + IC.team + '<span>Senior</span></button><button class="tab' + (onU ? ' on' : '') + '" data-az="u-apri">' + IC.target + '<span>Under</span></button>' : ts('Serie B') + ts('Serie C') + (st.sessione && ((st.sessione.ruolo === 'ospite' && !st.sessione.tipo) || uStaffExtra() || (st.sessione.ruolo === 'staff' && !st.sessione.tipo)) ? '<button class="tab' + (onU ? ' on' : '') + '" data-az="u-apri">' + IC.target + '<span>Under</span></button>' : '');
   return '<nav class="tabbar"><div class="tabbar-in">' + t('settimana', 'Impegni', IC.cal) + navSerie + (st.sessione && st.sessione.ruolo === 'staff' && !st.sessione.dir ? '<a class="tab solo-pc" href="tagging.html' + (inDemo ? '?demo=1' : '') + '"><span class="tbic">' + IC.scout + '</span><span>Tagging</span></a>' : '') + '<button class="tab' + (st.tab === 'profilo' ? ' on' : '') + (st.dati && st.dati.utente && st.dati.utente.segn ? ' nuovo' : '') + '" data-az="tab" data-tab="profilo"><span class="tbic">' + IC.user + '</span><span>Profilo</span></button>' + '<div class="side-sep"></div>' + (haChat() ? '<button class="tab tab-chat' + (st.tab === 'chat' ? ' on' : '') + (nonLette() ? ' nuovo' : '') + '" data-az="tab" data-tab="chat" data-chatbadge="1"><span class="tbic">' + IC.attivita + '</span><span>Avvisi</span></button>' : '') + '<button class="tab tab-chat" data-az="gioco"><span class="tbic">' + IC.joy + '</span><span>Giochi</span></button><button class="tab tab-chat" data-az="frasi"><span class="tbic">' + IC.libro + '</span><span>Frasi</span></button>' + (htmlDashIcona() ? '<a class="tab tab-chat" href="dashboard.html" target="_blank" rel="noopener"><span class="tbic">' + IC.podio + '</span><span>Dashboard</span></a>' : '') + '</div><div class="side-foot">Stagione ' + stagione() + '</div></nav>';
 }
 
